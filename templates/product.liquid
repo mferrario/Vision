@@ -1,0 +1,56 @@
+<div class="container-fluid">
+  <div class="product-form">
+    <div class="row">
+      <div class="col-md-6">
+        {% include 'product_gallery' %}
+      </div>
+      <div class="col-md-6">
+        <div class="product-content">
+          <div class="product-holder">
+            <h1>{{ product.title }}</h1>
+            {% assign variant = product.selected_or_first_available_variant %}
+            <span class="price {% if variant.price_min < variant.compare_at_price_min %}cost{% endif %}" id="price-field-{{ product.id }}">{% if variant.price_min < variant.compare_at_price_min %}ON SALE{% endif %} {{ variant.price_min | money }}{% if variant.price_min < variant.compare_at_price_min %} <del>{{ variant.compare_at_price_min | money }}</del>{% endif %}</span>
+            {% include 'add-to-cart' %}
+          </div>
+          <hr role="separator" class="divider">
+          <p>
+            {{ product.description }}
+          </p>
+          {% if product.collections.size > 0 %}
+          	{% for one_cat in product.collections limit:1 %}
+          		<p><b>More from <a href="{{ one_cat.url }}">{{ one_cat.title }}</a></b></p>
+          	{% endfor %}
+          {% endif %}
+          {% include 'related-products' %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% include 'add-to-cart-js' %}
+<hr role="separator" class="divider white">
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12">
+      {% if collection %}
+        {% if collection.previous_product or collection.next_product %}
+          <nav>
+            <ul class="pager">
+              {% if collection.previous_product %}
+                <li class="pull-left text-left">
+                  {{ '‹PREVIOUS PRODUCT' | link_to: collection.previous_product }}
+                </li>
+              {% endif %}
+              {% if collection.next_product %}
+              	<li class="pull-right text-right">
+                  {{ 'NEXT PRODUCT›' | link_to: collection.next_product }}
+              	</li>
+              {% endif %}
+            </ul>
+          </nav>
+      	{% endif %}
+      {% endif %}
+      {% include 'breadcrumbs_product' %}
+    </div>
+  </div>
+</div>

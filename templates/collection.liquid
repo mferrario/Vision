@@ -1,0 +1,49 @@
+<div class="intro text-center {% if collection.image == blank %}not-image{% endif %}">
+  {% if collection.image %}
+    <picture>
+      <!--[if IE 9]><video style="display: none;"><![endif]-->
+      <source srcset="{{ collection.image.src | img_url: 'large' }}, {{ collection.image.src | img_url: 'large' }} 2x" media="(max-width: 991px)">
+      <source srcset="{{ collection.image.src | img_url: '2048x2048' }}">
+      <!--[if IE 9]></video><![endif]-->
+      <img src="{{ collection.image.src | img_url: '2048x2048' }}" alt="image description" width="1400" height="217">
+    </picture>
+  {% endif %}
+  <div class="intro-text">
+    <div class="container-fluid">
+      <h1>{{ collection.title }}</h1>
+    </div>
+  </div>
+</div>
+<div class="collection-container container-fluid text-center">
+  {% if collection.description != blank %}
+    <div class="description">
+      <p>{{ collection.description }}</p>
+    </div>
+  {% endif %}
+  {% paginate collection.products by settings.pagination_limit %}
+    {% if collection.products.size > 0 %}
+  	  {% if settings.collection_sort_by or settings.collection_tags %}
+        <strong class="filter-label hidden-xs">OK, LET’S DIAL IT IN:</strong>
+        <div class="filter-box">
+          {% include 'browse-by' %}
+          {% include 'sort-by' %}
+        </div>
+  	  {% endif %}
+      <ul class="product-list{% if settings.use_ajax_loading_products %} ajax-holder{% endif %}">
+        {% for product in collection.products %}
+          {% include 'product-loop' with collection.handle %}
+        {% endfor %}
+      </ul>
+      {% if settings.use_ajax_loading_products %}
+          {% if paginate.next.is_link %}
+              <a class="ajax-next" href="{{ paginate.next.url }}">{{ paginate.next.title }}</a>
+          {% endif %}
+      {% else %}
+      	{% include 'pagination' %}
+  	  {% endif %}
+    {% else %}
+        <p>{{ 'collections.general.no_products' | t }}</p>
+  	{% endif %}
+  {% endpaginate %}
+</div>
+{% include 'add-to-cart-js' %}

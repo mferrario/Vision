@@ -1,0 +1,16 @@
+{% if settings.view_payment %}
+  <ul class="list-inline payment-list">
+    {% for i in (1..5) %}
+      {% capture curr_image %}payment_image_{{i}}.png{% endcapture %}
+      {% capture link_url %}payment_link_{{i}}{% endcapture %}
+      {% capture view_method %}view_method_{{i}}{% endcapture %}
+      {% if settings[view_method] %} 
+    	<li>
+          <a href="{{ settings[link_url] }}">
+            <img src="{{ curr_image | asset_url }}" alt="image description" width="68" height="35">
+          </a>
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+{% endif %}

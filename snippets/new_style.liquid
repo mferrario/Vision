@@ -1,0 +1,65 @@
+{% if settings.view_newstyle %}
+  <section class="categories-section text-center">
+    <div class="container-fluid mobile-full">
+      {% if settings.title_newstyle != blank %}
+        <div class="row">
+          <div class="col-sm-12">
+            <h2>{{ settings.title_newstyle }}</h2>
+          </div>
+        </div>
+      {% endif %}
+      {% if settings.view_bigblock1 or settings.view_bigblock2 %}
+        <div class="row">
+          {% for i in (1..2) %}
+            {% capture view_bigblock %}view_bigblock{{i}}{% endcapture %}
+          	{% capture link_bigblock %}link_bigblock{{i}}{% endcapture %}
+          	{% capture description_bigblock %}description_bigblock{{i}}{% endcapture %}
+          	{% capture small_image_bigblock %}small_image_bigblock{{i}}.jpg{% endcapture %}
+          	{% capture small_imagebig_bigblock %}small_imagebig_bigblock{{i}}.jpg{% endcapture %}
+          	{% capture image_bigblock %}image_bigblock{{i}}.jpg{% endcapture %}
+          	{% if settings[view_bigblock] %}
+              <div class="col-sm-6">
+                <a {% if settings[link_bigblock] != blank %} href="{{ settings[link_bigblock] }}" {% endif %} class="category-box image-bg">
+                  <picture>
+                    <!--[if IE 9]><video style="display: none;"><![endif]-->
+                    <source srcset="{{ small_image_bigblock | asset_url }}, {{ small_imagebig_bigblock | asset_url }} 2x" media="(max-width: 767px)">
+                    <source srcset="{{ image_bigblock | asset_url }}">
+                    <!--[if IE 9]></video><![endif]-->
+                    <img src="{{ image_bigblock | asset_url }}" alt="image description" width="586" height="460">
+                  </picture>
+                  {{ settings[description_bigblock] }}
+                </a>
+              </div>
+          	{% endif %}
+          {% endfor %}
+        </div>
+      {% endif %}
+      {% if settings.view_smallblock_1 or settings.view_smallblock_2 or settings.view_smallblock_3 or settings.view_smallblock_4 or settings.view_smallblock_5 or settings.view_smallblock_6 %}
+        <div class="row">
+          {% for i in (1..6) %}
+          	{% capture view_smallblock %}view_smallblock_{{i}}{% endcapture %}
+          	{% capture link_smallblock %}link_smallblock_{{i}}{% endcapture %}
+          	{% capture linktext_smallblock %}linktext_smallblock_{{i}}{% endcapture %}
+          	{% capture small_image_smallblock %}small_image_smallblock_{{i}}.jpg{% endcapture %}
+          	{% capture small_imagebig_smallblock %}small_imagebig_smallblock_{{i}}.jpg{% endcapture %}
+          	{% capture image_smallblock %}image_smallblock_{{i}}.jpg{% endcapture %}
+            {% if settings[view_smallblock] %}
+              <div class="col-sm-4 col-xs-6">
+                <a {% if settings[link_smallblock] != blank %} href="{{ settings[link_smallblock] }}" {% endif %} class="category-box image-bg">
+                  <picture>
+                    <!--[if IE 9]><video style="display: none;"><![endif]-->
+                    <source srcset="{{ small_image_smallblock | asset_url }}, {{ small_imagebig_smallblock | asset_url }} 2x" media="(max-width: 767px)">
+                    <source srcset="{{ image_smallblock | asset_url }}">
+                    <!--[if IE 9]></video><![endif]-->
+                    <img src="{{ image_smallblock | asset_url }}" alt="image description" width="390" height="265">
+                  </picture>
+                  <span class="bottom-link">{{ settings[linktext_smallblock] }}</span>
+                </a>
+              </div>
+          	{% endif %}
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+  </section>
+{% endif %}

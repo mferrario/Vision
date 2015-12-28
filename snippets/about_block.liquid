@@ -1,0 +1,14 @@
+{% if settings.view_aboutblock %}
+  {% if settings.title_aboutblock or settings.description_aboutblock %}
+    <div class="col-md-4">
+      <div class="holder">
+        {% if settings.title_aboutblock != blank %}
+          <h3>{{ settings.title_aboutblock }}</h3>
+        {% endif %}
+        {% if settings.description_aboutblock != blank %}
+          <p>{{ settings.description_aboutblock }}</p>
+        {% endif %}
+      </div>
+    </div>
+  {% endif %}
+{% endif %}

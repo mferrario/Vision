@@ -1,0 +1,9 @@
+<script type="text/javascript">
+  jQuery(document).ready(function($){
+    new Shopify.OptionSelectors("product-variants-{{product.id}}", { product: {{ product | json }}, onVariantSelected: selectCallback, enableHistoryState: true });
+    // Add label if only one product option and it isn't 'Title'.
+    {% if product.options.size == 1 and product.options.first != 'Title' %}
+      jQuery('#product-{{product.id}} .selector-wrapper:eq(0)').prepend('<label>{{ product.options.first | escape }}</label>');
+    {% endif %}
+  });
+</script>

@@ -1,0 +1,45 @@
+{% assign select_blog = blogs[settings.this_blog] %}
+{% if settings.view_thisthat and settings.this_blog != blank and select_blog.articles_count > 0 %}
+  <section class="blog-section">
+    <div class="container-fluid mobile-full">
+      {% if settings.title_thisthat != blank %}
+        <div class="row">
+          <div class="col-sm-12 text-center">
+            <h2>{{ settings.title_thisthat }}</h2>
+          </div>
+        </div>
+      {% endif %}
+      <div class="row">
+        {% for article in select_blog.articles limit:3 %}
+        	<div class="col-sm-4">
+                <article class="blog-box">
+                  {% if article.image %}
+                    <a href="{{ article.url  }}" class="image-bg-light">
+                      <picture>
+                        <!--[if IE 9]><video style="display: none;"><![endif]-->
+                        <source srcset="{{ article | img_url: 'large' }}, {{ article | img_url: '1024x1024' }} 2x" media="(max-width: 767px)">
+                        <source srcset="{{ article | img_url: 'large' }}">
+                        <!--[if IE 9]></video><![endif]-->
+                        <img src="{{ article | img_url: 'large' }}" alt="image description" width="390" height="390">
+                      </picture>
+                    </a>
+                  {% endif %}
+                  <div class="blog-text">
+                    <h3><a href="{{ article.url  }}">{{ article.title  }}</a></h3>
+                    <p><a href="{{ article.url  }}">
+                      {% if article.excerpt == blank %}
+                      	{{ article.content | strip_html | truncate: 30 }}
+                      {% else %}
+                      	{{ article.excerpt }}
+                      {% endif %}
+                      </a>
+                    </p>
+                    <a href="{{ article.url  }}" class="more">{{ 'blogs.article.read_more' | t }}</a>
+                  </div>
+                </article>
+              </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+{% endif %}

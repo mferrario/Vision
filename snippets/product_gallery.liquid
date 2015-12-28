@@ -1,0 +1,31 @@
+<div class="slideshow">
+  <div class="slideset">
+    {% for image in product.images %}
+      <div class="slide">
+        <div class="zoom-item inside">
+          <div class="zoom-image-holder">
+            <a href="{{ image.src | product_img_url: '2048x2048' }}"><img src="{{ image.src | product_img_url: 'grande' }}" alt="{{ image.alt }}"></a>
+          </div>
+          <div class="zoom-image-big"></div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+  <div class="slideshow-pagination">
+    <ul>
+      {% for image in product.images %}
+        {% assign data_var = '' %}
+      	{% capture data_var %}
+      	  variantids="    
+      		{% for variant in product.variants %}
+              {% if variant.image.id == image.id %}
+               {{ variant.id }},
+              {% endif %}
+            {% endfor %}
+      	  "
+      	{% endcapture %}
+      	<li {{ data_var }}><a href="#"><img src="{{ image.src | product_img_url: 'compact' }}" alt="{{ image.alt }}" width="102" height="102"></a></li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>

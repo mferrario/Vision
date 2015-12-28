@@ -1,0 +1,31 @@
+{% capture collection_handle %}{{ product-loop | handleize }}{% endcapture %}
+{% capture url %}{% if collection_handle != "" %}/collections/{{ product-loop }}{{ product.url }}{% else %}{{ product.url }}{% endif %}{% endcapture %}
+
+{% if settings.use_ajax_loading_products %}
+  {% assign tag = '' %}
+  {% if product.tags.size > 0 %}
+    {% for ctag in product.tags %}
+      {% assign tag_opt = ctag | handleize %}
+      {% assign tag = tag | append: tag_opt | append: '//' %}
+    {% endfor %}
+  {% endif %}
+  {% assign tag = tag | split: '//' | uniq | join: ',' %}
+{% endif %}
+<li class="item{% if settings.use_ajax_loading_products %} ajax-item{% endif %}"{% if settings.use_ajax_loading_products %} data-product-info='{
+          {% if tag != '' %}"tag": "{{ tag }}"{% endif %}
+  }'{% endif %}>
+  <a href="{{ url }}" class="product-image">
+    {% if product.featured_image %}
+    	<img src="{{ product.featured_image | product_img_url: 'large' }}" alt="{{ product.featured_image.alt | escape }}" width="280" height="280" />
+    {% else %}
+    	<img src="{{ product | img_url: 'large' }}" alt="{{ product.featured_image.alt | escape }}" width="280" height="280" />
+    {% endif %}
+  </a>						
+  <div class="product-text">
+    <a href="{{ url }}" class="product-name">{{ product.title }}</a>
+    <a href="{{ url }}"><span class="cost {% if product.price_min > product.compare_at_price_min %}regular-price{% endif %}" id="price-field-{{ product.id }}">{% if product.price_min < product.compare_at_price_min %}ON SALE{% endif %} {{ product.price_min | money }}{% if product.price_min < product.compare_at_price_min %} <del>{{ product.compare_at_price_min | money }}</del>{% endif %}</span></a>
+    {% if product.available != true and product.featured_image %}
+      <span class="sold-out">{{ 'products.product.sold_out_html' | t }}</span>
+    {% endif %}
+  </div>
+</li>

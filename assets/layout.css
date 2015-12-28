@@ -1,0 +1,71 @@
+/*
+** "Base" theme
+*/
+.hidden {display:none;}
+/* blog */
+.shopify-posts .post {margin:0 0 15px;}
+.shopify-posts .info-box {overflow:hidden;}
+.shopify-posts .btn-more {float:right;}
+/* paging */
+.paging {
+    margin:0 0 15px;
+    overflow:hidden;
+    text-align:center;
+    width:100%;
+}
+.paging li {
+    display:inline;
+    list-style-type:none;
+    margin:0 10px;    
+}
+.paging li.active {font-weight:bold;}
+/* comments */
+#comments {margin:0 0 15px;}
+#comment-list {
+    margin:0;
+    padding:0 0 0 20px;
+}
+#comment-list li {
+    list-style-position:outside;
+    margin:0 0 10px;
+}
+#comment-submit {padding:0 7px;}
+/* search-results */
+.search-results {
+  	padding:0;
+  	margin:0;
+  	list-style:none;
+}
+.search-results li {
+    margin:0 0 15px;
+    list-style:none;
+}
+.search-results:after,
+.search-results li:after {
+    display:block;
+    content:"";
+    clear:both;
+}
+/* cart */
+.shopify-cart,
+.shopify-cart table  {width:100%;}
+.shopify-cart  .prd,
+.shopify-cart  .prc,
+.shopify-cart  .rmv,
+.shopify-cart  .qty {
+    text-align:center;
+    width:24%;
+    padding-bottom:5px;
+}
+.shopify-cart  .total  {text-align:right;}
+.shopify-cart .img-box img {margin:5px auto;}
+.ajax-next {
+	display: block;
+	cursor: default;
+	height: 30px;
+	text-indent: -9999px;
+	overflow: hidden;
+	background:url(loader.gif) no-repeat 50% 50%;
+}
+.full-load-link {display: none;}
+.ajax-holder .filtering-hidden {display: none;}

@@ -1,0 +1,28 @@
+<footer id="footer"  class="w1">
+  <div class="footer-holder">
+    <div class="container-fluid">
+      <div class="row">
+        {% include 'about_block' %}
+        <div class="col-md-4">
+          <div class="holder">
+            {% include 'mailchimp_form' %}
+            {% include 'social-networks' %}
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="holder">
+            {% include 'footer-menu' %}
+          </div>
+        </div>
+      </div>
+      <div class="row line">
+        <div class="col-md-5">
+          {% include 'payment-list' %}
+        </div>
+        <div class="col-md-7 text-center">
+          <p>&copy; COPYRIGHT {{ 'now' | date: "%Y" }} TRIM &amp; GLIDE. ALL RIGHTS RESERVED. <br>DESIGNED BY <a href="{{ shop.url }}">ELOQUENT</a>. POWERED BY {{ powered_by_link }}. </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

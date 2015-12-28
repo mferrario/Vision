@@ -1,0 +1,10 @@
+{% if settings.show_linklist_on_footer and linklists[settings.footer_linklist].links.size > 0 %}
+  {% if settings.footer_linklist_title != blank %}
+  	<h3>{{ settings.footer_linklist_title }}</h3>
+  {% endif %}
+  {% for link in linklists[settings.footer_linklist].links %}
+    {% if forloop.first %}<ul class="list-unstyled mobile-inline">{% endif %}
+    <li{% if link.active %} class="active"{% endif %}><a href="{{ link.url }}">{{ link.title }}</a></li>
+    {% if forloop.last %}</ul>{% endif %}				
+  {% endfor %}
+{% endif %}

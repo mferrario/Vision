@@ -1,0 +1,17 @@
+{% if paginate.pages > 1 %}
+  <nav>
+    <ul class="pagination clearfix">
+    {% if paginate.previous %}
+    	<li class="prev"><a href="{{ paginate.previous.url }}" aria-label="Previous" class="prev1"><span aria-hidden="true">{{ 'general.pagination.previous' | t }}</span></a></li>
+    {% else %}
+    	<li><span>{{ back_word }}</span></li>
+    {% endif %}
+      <li class="active"><a>{{ paginate.current_page }}</a></li>
+    {% if paginate.next %}
+    	<li class="next"><a href="{{ paginate.next.url }}" aria-label="Next" class="next1"><span aria-hidden="true">{{ 'general.pagination.next' | t }}</span></a></li>
+    {% else %}
+    	<li><span>{{ next_word }}</span></li>
+    {% endif %}
+    </ul>
+  </nav>
+{% endif %}

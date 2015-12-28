@@ -1,0 +1,1072 @@
+[
+  {
+    "name": "Colors",
+    "settings": [
+      {
+        "type": "color",
+        "id": "color_borders",
+        "label": "Border Colors",
+        "default": "#e5e5e5"
+      },
+      {
+        "type": "color",
+        "id": "color_body_text",
+        "label": "Body Text",
+        "default": "#333333"
+      }
+    ]
+  },
+  {
+    "name": "General Options - MF",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Logo and icon settings"
+      },
+      {
+        "type": "checkbox",
+        "id": "use_logo",
+        "label": "Use custom logo"
+      },
+      {
+        "type": "image",
+        "id": "logo.png"
+      },
+      {
+        "type": "checkbox",
+        "id": "use_favicon",
+        "label": "Use custom icon (16px x 16px)"
+      },
+      {
+        "type": "image",
+        "id": "favicon.png",
+        "max-width": 16,
+        "max-height": 16
+      },
+      {
+        "type": "header",
+        "content": "Primary link list"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_linklist_on_header",
+        "label": "Show primary navigation?"
+      },
+      {
+        "type": "link_list",
+        "id": "header_linklist",
+        "label": "Link list to show"
+      }
+    ]
+  },
+  {
+    "name": "Homepage",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Homepage content"
+      },
+      {
+        "type": "page",
+        "id": "homepage",
+        "label": "Page to show on homepage"
+      },
+      {
+        "type": "header",
+        "content": "Home Category"
+      },
+      {
+        "type": "checkbox",
+        "id": "view_category",
+        "default": true,
+        "label": "View Category?"
+      },
+      {
+        "type": "collection",
+        "id": "home_collection",
+        "label": "Home Collection"
+      },
+      {
+        "type": "text",
+        "id": "homecat_limit",
+        "label": "Number of products",
+        "default": "8"
+      }
+    ]
+  },
+  {
+    "name": "HomePage Gallery",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Homepage Gallery"
+      },
+      {
+        "type": "checkbox",
+        "id": "view_gallery",
+        "default": true,
+        "label": "View Galery?"
+      },
+      {
+        "type": "header",
+        "content": "Slider1"
+      },
+      {
+        "type": "checkbox",
+        "id": "view_slide1",
+        "label": "View Slide1?"
+      },
+      {
+        "type": "select",
+        "id": "position_text_1",
+        "options": [
+          {
+            "value": "center",
+            "label": "Center"
+          },
+          {
+            "value": "text-right",
+            "label": "Right"
+          },
+          {
+            "value": "text-left",
+            "label": "Left"
+          }
+        ],
+        "label": "Position Text"
+      },
+      {
+        "type": "text",
+        "id": "title_slide1",
+        "label": "Title Slide1"
+      },
+      {
+        "type": "text",
+        "id": "description_slide1",
+        "label": "Description Slide1"
+      },
+      {
+        "type": "text",
+        "id": "linktext_slide1",
+        "label": "Linktext Slide1"
+      },
+      {
+        "type": "text",
+        "id": "link_slide1",
+        "label": "Link Slide1"
+      },
+      {
+        "type": "image",
+        "id": "slide_image1.jpg",
+        "label": "Text",
+        "max-width": 1400,
+        "info": "Slide Image1"
+      },
+      {
+        "type": "header",
+        "content": "Slider2"
+      },
+      {
+        "type": "checkbox",
+        "id": "view_slide2",
+        "label": "View Slide2?"
+      },
+      {
+        "type": "select",
+        "id": "position_text_2",
+        "options": [
+          {
+            "value": "center",
+            "label": "Center"
+          },
+          {
+            "value": "text-right",
+            "label": "Right"
+          },
+          {
+            "value": "text-left",
+            "label": "Left"
+          }
+        ],
+        "label": "Position Text"
+      },
+      {
+        "type": "text",
+        "id": "title_slide2",
+        "label": "Title Slide2"
+      },
+      {
+        "type": "text",
+        "id": "description_slide2",
+        "label": "Description Slide2"
+      },
+      {
+        "type": "text",
+        "id": "linktext_slide2",
+        "label": "Linktext Slide2"
+      },
+      {
+        "type": "text",
+        "id": "link_slide2",
+        "label": "Link Slide2"
+      },
+      {
+        "type": "image",
+        "id": "slide_image2.jpg",
+        "label": "Text",
+        "max-width": 1400,
+        "info": "Slide Image2"
+      },
+      {
+        "type": "header",
+        "content": "Slider3"
+      },
+      {
+        "type": "checkbox",
+        "id": "view_slide3",
+        "label": "View Slide3?"
+      },
+      {
+        "type": "select",
+        "id": "position_text_3",
+        "options": [
+          {
+            "value": "center",
+            "label": "Center"
+          },
+          {
+            "value": "text-right",
+            "label": "Right"
+          },
+          {
+            "value": "text-left",
+            "label": "Left"
+          }
+        ],
+        "label": "Position Text"
+      },
+      {
+        "type": "text",
+        "id": "title_slide3",
+        "label": "Title Slide3"
+      },
+      {
+        "type": "text",
+        "id": "description_slide3",
+        "label": "Description Slide3"
+      },
+      {
+        "type": "text",
+        "id": "linktext_slide3",
+        "label": "Linktext Slide3"
+      },
+      {
+        "type": "text",
+        "id": "link_slide3",
+        "label": "Link Slide3"
+      },
+      {
+        "type": "image",
+        "id": "slide_image3.jpg",
+        "label": "Text",
+        "max-width": 1400,
+        "info": "Slide Image3"
+      },
+      {
+        "type": "header",
+        "content": "Slider4"
+      },
+      {
+        "type": "checkbox",
+        "id": "view_slide4",
+        "label": "View Slide4?"
+      },
+      {
+        "type": "select",
+        "id": "position_text_4",
+        "options": [
+          {
+            "value": "center",
+            "label": "Center"
+          },
+          {
+            "value": "text-right",
+            "label": "Right"
+          },
+          {
+            "value": "text-left",
+            "label": "Left"
+          }
+        ],
+        "label": "Position Text"
+      },
+      {
+        "type": "text",
+        "id": "title_slide4",
+        "label": "Title Slide4"
+      },
+      {
+        "type": "text",
+        "id": "description_slide4",
+        "label": "Description Slide4"
+      },
+      {
+        "type": "text",
+        "id": "linktext_slide4",
+        "label": "Linktext Slide4"
+      },
+      {
+        "type": "text",
+        "id": "link_slide4",
+        "label": "Link Slide4"
+      },
+      {
+        "type": "image",
+        "id": "slide_image4.jpg",
+        "label": "Text",
+        "max-width": 1400,
+        "info": "Slide Image4"
+      },
+      {
+        "type": "header",
+        "content": "Slider5"
+      },
+      {
+        "type": "checkbox",
+        "id": "view_slide5",
+        "label": "View Slide5?"
+      },
+      {
+        "type": "select",
+        "id": "position_text_5",
+        "options": [
+          {
+            "value": "center",
+            "label": "Center"
+          },
+          {
+            "value": "text-right",
+            "label": "Right"
+          },
+          {
+            "value": "text-left",
+            "label": "Left"
+          }
+        ],
+        "label": "Position Text"
+      },
+      {
+        "type": "text",
+        "id": "title_slide5",
+        "label": "Title Slide5"
+      },
+      {
+        "type": "text",
+        "id": "description_slide5",
+        "label": "Description Slide5"
+      },
+      {
+        "type": "text",
+        "id": "linktext_slide5",
+        "label": "Linktext Slide5"
+      },
+      {
+        "type": "text",
+        "id": "link_slide5",
+        "label": "Link Slide5"
+      },
+      {
+        "type": "image",
+        "id": "slide_image5.jpg",
+        "label": "Text",
+        "max-width": 1400,
+        "info": "Slide Image5"
+      }
+    ]
+  },
+  {
+    "name": "HomePage New Style",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Homepage New Style"
+      },
+      {
+        "type": "checkbox",
+        "id": "view_newstyle",
+        "default": true,
+        "label": "View Block?"
+      },
+      {
+        "type": "text",
+        "id": "title_newstyle",
+        "label": "Title Block"
+      },
+      {
+        "type": "checkbox",
+        "id": "view_bigblock1",
+        "label": "View Big Block1?"
+      },
+      {
+        "type": "text",
+        "id": "link_bigblock1",
+        "label": "Link Big Block1"
+      },
+      {
+        "type": "textarea",
+        "id": "description_bigblock1",
+        "label": "Description Big Block1"
+      },
+      {
+        "type": "image",
+        "id": "small_image_bigblock1.jpg",
+        "label": "Text",
+        "max-width": 320,
+        "max-height": 289,
+        "info": "Small Image"
+      },
+      {
+        "type": "image",
+        "id": "small_imagebig_bigblock1.jpg",
+        "label": "Text",
+        "max-width": 640,
+        "max-height": 578,
+        "info": "Small Image Big"
+      },
+      {
+        "type": "image",
+        "id": "image_bigblock1.jpg",
+        "label": "Text",
+        "max-width": 586,
+        "max-height": 460,
+        "info": "Image"
+      },
+      {
+        "type": "checkbox",
+        "id": "view_bigblock2",
+        "label": "View Big Block2?"
+      },
+      {
+        "type": "text",
+        "id": "link_bigblock2",
+        "label": "Link Big Block2"
+      },
+      {
+        "type": "textarea",
+        "id": "description_bigblock2",
+        "label": "Description Big Block2"
+      },
+      {
+        "type": "image",
+        "id": "small_image_bigblock2.jpg",
+        "label": "Text",
+        "max-width": 320,
+        "max-height": 289,
+        "info": "Small Image"
+      },
+      {
+        "type": "image",
+        "id": "small_imagebig_bigblock2.jpg",
+        "label": "Text",
+        "max-width": 640,
+        "max-height": 578,
+        "info": "Small Image Big"
+      },
+      {
+        "type": "image",
+        "id": "image_bigblock2.jpg",
+        "label": "Text",
+        "max-width": 586,
+        "max-height": 460,
+        "info": "Image"
+      },
+      {
+        "type": "header",
+        "content": "Small Block_1"
+      },
+      {
+        "type": "checkbox",
+        "id": "view_smallblock_1",
+        "label": "View Small Block _1?"
+      },
+      {
+        "type": "text",
+        "id": "link_smallblock_1",
+        "label": "Link Small Block _1"
+      },
+      {
+        "type": "text",
+        "id": "linktext_smallblock_1",
+        "label": "Link Text Small Block _1"
+      },
+      {
+        "type": "image",
+        "id": "small_image_smallblock_1.jpg",
+        "label": "Text",
+        "max-width": 160,
+        "max-height": 108,
+        "info": "Small Image"
+      },
+      {
+        "type": "image",
+        "id": "small_imagebig_smallblock_1.jpg",
+        "label": "Text",
+        "max-width": 320,
+        "max-height": 218,
+        "info": "Small Image Big"
+      },
+      {
+        "type": "image",
+        "id": "image_smallblock_1.jpg",
+        "label": "Text",
+        "max-width": 390,
+        "max-height": 265,
+        "info": "Image"
+      },
+      {
+        "type": "header",
+        "content": "Small Block_2"
+      },
+      {
+        "type": "checkbox",
+        "id": "view_smallblock_2",
+        "label": "View Small Block _2?"
+      },
+      {
+        "type": "text",
+        "id": "link_smallblock_2",
+        "label": "Link Small Block _2"
+      },
+      {
+        "type": "text",
+        "id": "linktext_smallblock_2",
+        "label": "Link Text Small Block _2"
+      },
+      {
+        "type": "image",
+        "id": "small_image_smallblock_2.jpg",
+        "label": "Text",
+        "max-width": 160,
+        "max-height": 108,
+        "info": "Small Image"
+      },
+      {
+        "type": "image",
+        "id": "small_imagebig_smallblock_2.jpg",
+        "label": "Text",
+        "max-width": 320,
+        "max-height": 218,
+        "info": "Small Image Big"
+      },
+      {
+        "type": "image",
+        "id": "image_smallblock_2.jpg",
+        "label": "Text",
+        "max-width": 390,
+        "max-height": 265,
+        "info": "Image"
+      },
+      {
+        "type": "header",
+        "content": "Small Block_3"
+      },
+      {
+        "type": "checkbox",
+        "id": "view_smallblock_3",
+        "label": "View Small Block _3?"
+      },
+      {
+        "type": "text",
+        "id": "link_smallblock_3",
+        "label": "Link Small Block _3"
+      },
+      {
+        "type": "text",
+        "id": "linktext_smallblock_3",
+        "label": "Link Text Small Block _3"
+      },
+      {
+        "type": "image",
+        "id": "small_image_smallblock_3.jpg",
+        "label": "Text",
+        "max-width": 160,
+        "max-height": 108,
+        "info": "Small Image"
+      },
+      {
+        "type": "image",
+        "id": "small_imagebig_smallblock_3.jpg",
+        "label": "Text",
+        "max-width": 320,
+        "max-height": 218,
+        "info": "Small Image Big"
+      },
+      {
+        "type": "image",
+        "id": "image_smallblock_3.jpg",
+        "label": "Text",
+        "max-width": 390,
+        "max-height": 265,
+        "info": "Image"
+      },
+      {
+        "type": "header",
+        "content": "Small Block_4"
+      },
+      {
+        "type": "checkbox",
+        "id": "view_smallblock_4",
+        "label": "View Small Block _4?"
+      },
+      {
+        "type": "text",
+        "id": "link_smallblock_4",
+        "label": "Link Small Block _4"
+      },
+      {
+        "type": "text",
+        "id": "linktext_smallblock_4",
+        "label": "Link Text Small Block _4"
+      },
+      {
+        "type": "image",
+        "id": "small_image_smallblock_4.jpg",
+        "label": "Text",
+        "max-width": 160,
+        "max-height": 108,
+        "info": "Small Image"
+      },
+      {
+        "type": "image",
+        "id": "small_imagebig_smallblock_4.jpg",
+        "label": "Text",
+        "max-width": 320,
+        "max-height": 218,
+        "info": "Small Image Big"
+      },
+      {
+        "type": "image",
+        "id": "image_smallblock_4.jpg",
+        "label": "Text",
+        "max-width": 390,
+        "max-height": 265,
+        "info": "Image"
+      },
+      {
+        "type": "header",
+        "content": "Small Block_5"
+      },
+      {
+        "type": "checkbox",
+        "id": "view_smallblock_5",
+        "label": "View Small Block _5?"
+      },
+      {
+        "type": "text",
+        "id": "link_smallblock_5",
+        "label": "Link Small Block _5"
+      },
+      {
+        "type": "text",
+        "id": "linktext_smallblock_5",
+        "label": "Link Text Small Block _5"
+      },
+      {
+        "type": "image",
+        "id": "small_image_smallblock_5.jpg",
+        "label": "Text",
+        "max-width": 160,
+        "max-height": 108,
+        "info": "Small Image"
+      },
+      {
+        "type": "image",
+        "id": "small_imagebig_smallblock_5.jpg",
+        "label": "Text",
+        "max-width": 320,
+        "max-height": 218,
+        "info": "Small Image Big"
+      },
+      {
+        "type": "image",
+        "id": "image_smallblock_5.jpg",
+        "label": "Text",
+        "max-width": 390,
+        "max-height": 265,
+        "info": "Image"
+      },
+      {
+        "type": "header",
+        "content": "Small Block_6"
+      },
+      {
+        "type": "checkbox",
+        "id": "view_smallblock_6",
+        "label": "View Small Block _6?"
+      },
+      {
+        "type": "text",
+        "id": "link_smallblock_6",
+        "label": "Link Small Block _6"
+      },
+      {
+        "type": "text",
+        "id": "linktext_smallblock_6",
+        "label": "Link Text Small Block _6"
+      },
+      {
+        "type": "image",
+        "id": "small_image_smallblock_6.jpg",
+        "label": "Text",
+        "max-width": 160,
+        "max-height": 108,
+        "info": "Small Image"
+      },
+      {
+        "type": "image",
+        "id": "small_imagebig_smallblock_6.jpg",
+        "label": "Text",
+        "max-width": 320,
+        "max-height": 218,
+        "info": "Small Image Big"
+      },
+      {
+        "type": "image",
+        "id": "image_smallblock_6.jpg",
+        "label": "Text",
+        "max-width": 390,
+        "max-height": 265,
+        "info": "Image"
+      }
+    ]
+  },
+  {
+    "name": "HomePage This That",
+    "settings": [
+      {
+        "type": "header",
+        "content": "HomePage This That"
+      },
+      {
+        "type": "checkbox",
+        "id": "view_thisthat",
+        "default": true,
+        "label": "View Block?"
+      },
+      {
+        "type": "text",
+        "id": "title_thisthat",
+        "label": "Title Block"
+      },
+      {
+        "type": "blog",
+        "id": "this_blog",
+        "label": "Select Blog"
+      }
+    ]
+  },
+  {
+    "name": "Product Page",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Quantity Box"
+      },
+      {
+        "type": "checkbox",
+        "id": "display_quantity_display",
+        "label": "Display Quantity Box?"
+      },
+      {
+        "type": "header",
+        "content": "Inventory"
+      },
+      {
+        "type": "checkbox",
+        "id": "display_inventory_box",
+        "label": "Display inventory quantities?"
+      },
+      {
+        "type": "header",
+        "content": "Related products"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_related_products",
+        "label": "Display related products?"
+      },
+      {
+        "type": "text",
+        "id": "related_products_header",
+        "label": "Heading for that section",
+        "default": "Related products"
+      },
+      {
+        "type": "select",
+        "id": "related_products_limit",
+        "label": "Maximum number of items to show:",
+        "options": [
+          {
+            "value": "1",
+            "label": "1"
+          },
+          {
+            "value": "2",
+            "label": "2"
+          },
+          {
+            "value": "3",
+            "label": "3"
+          },
+          {
+            "value": "4",
+            "label": "4"
+          },
+          {
+            "value": "5",
+            "label": "5"
+          },
+          {
+            "value": "6",
+            "label": "6"
+          }
+        ],
+        "default": "3"
+      }
+    ]
+  },
+  {
+    "name": "Collection Page",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "collection_sort_by",
+        "label": "Show \"Sort by\" product filter?"
+      },
+      {
+        "type": "checkbox",
+        "id": "collection_tags",
+        "label": "Show \"Browse by\" product tag filter?"
+      },
+      {
+        "type": "checkbox",
+        "id": "use_ajax_loading_products",
+        "label": "Loading products with AJAX?"
+      },
+      {
+        "type": "text",
+        "id": "pagination_limit",
+        "label": "Number of products per page",
+        "default": "9"
+      }
+    ]
+  },
+  {
+    "name": "Blog Page",
+    "settings": [
+      {
+        "type": "text",
+        "id": "blog_pagination_limit",
+        "label": "Number of posts per page",
+        "default": "3"
+      },
+      {
+        "type": "checkbox",
+        "id": "use_ajax_loading_posts",
+        "label": "Loading posts with AJAX?",
+        "default": true
+      }
+    ]
+  },
+  {
+    "name": "Search Page",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "show_only_products_on_searchpage",
+        "label": "Return only products in storefront search results?"
+      }
+    ]
+  },
+  {
+    "name": "Footer",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Link list"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_linklist_on_footer",
+        "label": "Show footer navigation?"
+      },
+      {
+        "type": "text",
+        "id": "footer_linklist_title",
+        "label": "Footer navigation label",
+        "default": "Quick links"
+      },
+      {
+        "type": "link_list",
+        "id": "footer_linklist",
+        "label": "Link list to show"
+      },
+      {
+        "type": "header",
+        "content": "Social Links"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_social_on_footer",
+        "label": "Show social links?"
+      },
+      {
+        "type": "text",
+        "id": "twitter_link",
+        "label": "Twitter"
+      },
+      {
+        "type": "text",
+        "id": "facebook_link",
+        "label": "Facebook"
+      },
+      {
+        "type": "text",
+        "id": "pinterest_link",
+        "label": "Pinterest Link"
+      },
+      {
+        "type": "text",
+        "id": "instagram_link",
+        "label": "Instagram Link"
+      },
+      {
+        "type": "header",
+        "content": "About Block"
+      },
+      {
+        "type": "checkbox",
+        "id": "view_aboutblock",
+        "label": "View About Block?"
+      },
+      {
+        "type": "text",
+        "id": "title_aboutblock",
+        "label": "Title Block"
+      },
+      {
+        "type": "textarea",
+        "id": "description_aboutblock",
+        "label": "Description Block"
+      },
+      {
+        "type": "header",
+        "content": "Mailchimp Block"
+      },
+      {
+        "type": "checkbox",
+        "id": "view_mailchimp",
+        "label": "View Mailchimp Block?"
+      },
+      {
+        "type": "text",
+        "id": "title_mailchimp",
+        "label": "Title Block"
+      },
+      {
+        "type": "text",
+        "id": "title_mailurl",
+        "label": "Url Mailchimp Form"
+      },
+      {
+        "type": "header",
+        "content": "Payment List"
+      },
+      {
+        "type": "checkbox",
+        "id": "view_payment",
+        "label": "View Payment Block?"
+      },
+      {
+        "type": "checkbox",
+        "id": "view_method_1",
+        "label": "View Method?"
+      },
+      {
+        "type": "text",
+        "id": "payment_link_1",
+        "label": "Link"
+      },
+      {
+        "type": "image",
+        "id": "payment_image_1.png",
+        "max-width": 68,
+        "max-height": 35
+      },
+      {
+        "type": "checkbox",
+        "id": "view_method_2",
+        "label": "View Method?"
+      },
+      {
+        "type": "text",
+        "id": "payment_link_2",
+        "label": "Link"
+      },
+      {
+        "type": "image",
+        "id": "payment_image_2.png",
+        "max-width": 68,
+        "max-height": 35
+      },
+      {
+        "type": "checkbox",
+        "id": "view_method_3",
+        "label": "View Method?"
+      },
+      {
+        "type": "text",
+        "id": "payment_link_3",
+        "label": "Link"
+      },
+      {
+        "type": "image",
+        "id": "payment_image_3.png",
+        "max-width": 68,
+        "max-height": 35
+      },
+      {
+        "type": "checkbox",
+        "id": "view_method_4",
+        "label": "View Method?"
+      },
+      {
+        "type": "text",
+        "id": "payment_link_4",
+        "label": "Link"
+      },
+      {
+        "type": "image",
+        "id": "payment_image_4.png",
+        "max-width": 68,
+        "max-height": 35
+      },
+      {
+        "type": "checkbox",
+        "id": "view_method_5",
+        "label": "View Method?"
+      },
+      {
+        "type": "text",
+        "id": "payment_link_5",
+        "label": "Link"
+      },
+      {
+        "type": "image",
+        "id": "payment_image_5.png",
+        "max-width": 68,
+        "max-height": 35
+      }
+    ]
+  }
+]

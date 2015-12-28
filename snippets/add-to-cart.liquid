@@ -1,0 +1,63 @@
+{% if product.available %}
+  {% assign hide_default_title = false %}
+  {% if product.variants.size == 1 and product.variants.first.title contains 'Default' %}
+  	{% assign hide_default_title = true %}
+  {% endif %}
+  <form id="product-{{ product.id }}" action="/cart/add" method="post" class="variants row">
+    <fieldset>
+      <div class="col-lg-7 col-md-8">
+        {% comment %}<input type="hidden" name="return_to" value="back" />{% endcomment %}
+        <input type="hidden" name="redirect_to" value="/cart" />
+        <input type="hidden" id="price-{{ product.id }}" />
+        <input type="hidden" id="price-compare-{{ product.id }}" />
+        {% if settings.display_quantity_display == blank %}
+          <input type="hidden" id="product-quantity-{{product.id}}" name="quantity" value="1" />
+        {% endif %}
+        {% if product.variants %}
+          <div class="form-group">
+            <div id="select-holder-{{product.id}}" class="select-holder "{% if hide_default_title %} style="display:none"{% endif %}>
+              <select class="default form-control" id="product-variants-{{product.id}}" name="id">
+                {% for variant in product.variants %}
+                  {% if variant.available %}
+                      <option{% if variant.id == product.selected_or_first_available_variant.id %} selected="selected"{% endif %} value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money }}</option>
+                  {% endif %}
+                {% endfor %}
+              </select>
+            </div>
+          </div>
+        {% endif %}
+        <div class="form-group">
+          <div class="row">
+            {% if settings.display_quantity_display %}
+              <div class="col-xs-4">
+                <input id="product-quantity-{{product.id}}" placeholder="1" type="number" class="form-control" name="quantity" value="1"  min="1" onchange="Showroom.updatePrice({{product.id}})" />
+              </div>
+            {% endif %}
+            <div class="col-xs-8">
+              <input type="submit" id="add-{{ product.id }}" class="btn btn-default full" value="{{ 'products.product.add_to_cart' | t }}" name="add" {% comment %}onclick="Shopify.addItemFromForm('product-{{product.id}}'); return false;"{% endcomment %} />
+            </div>
+          </div>
+        </div>
+        {% if settings.display_inventory_box %}
+        <div class="form-group">
+          <div id="variant-inventory-{{product.id}}">
+            {% if product.variants.first.inventory_management == "shopify" and product.variants.first.inventory_quantity > 0 %}
+            We currently have {{ product.variants.first.inventory_quantity }} in stock.
+            {% endif %}
+          </div>
+        </div>
+        {% endif %}
+       </div>
+       <div class="info-text col-lg-5 col-md-4">
+         <p>{{ 'products.product.sorrytext' | t }}</p>
+         <p>{{ 'products.product.selectanother' | t }}</p>
+       </div>
+    </fieldset>
+  </form>
+  {% include 'option-selectors' %}
+<script>Showroom.updatePrice({{product.id}});</script>
+{% else %}
+<div class="sold-out">
+  <span class="price">{{ 'products.product.sold_out_html' | t }}</span>
+</div>      
+{% endif %}

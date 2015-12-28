@@ -1,0 +1,9 @@
+<form class="form-inline input-box" action="/search" method="get">
+  <a class="input-opener" role="button" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample"><span class="open-text"><span class="hidden-xs hidden-sm">search</span><i class="iconalt-search"></i></span><span class="close-text"><span class="hidden-xs hidden-sm">close search</span><i class="iconalt-remove"></i></span></a>
+  <div class="input-group collapse" id="collapseExample" style="height: 0;">
+    {% if settings.show_only_products_on_searchpage %}
+      <input type="hidden" name="type" value="product" />
+    {% endif %}
+      <input type="search" name="q" class="form-control input-sm" placeholder="{{ 'general.search.placeholder' | t }}">
+  </div>
+</form>

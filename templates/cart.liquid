@@ -1,0 +1,137 @@
+{% if cart.item_count == 0 %} 
+<div class="container-fluid">  
+  <div class="row">
+    <div class="col-sm-12">
+<p>{{ 'cart.general.empty' | t }}</p>
+    </div>
+  </div>
+</div>
+{% else %}		
+  <form action="/cart" method="post" class="shopify-cart1 cart-form">
+    <fieldset>
+      <div class="container-fluid">
+        <div class="cart-heading">
+          <h2 class="pull-left">YOU HAVE {{ cart.item_count }} ITEM{% if cart.item_count > 1 %}S{% endif %} IN YOUR CART.</h2>
+          <ul class="btn-list list-inline pull-right">
+            <li>
+              <button class="btn btn-default" id="checkout" name="checkout" type="submit">{{ 'cart.general.button' | t }}</button>
+            </li>
+            <li>
+              <button class="btn btn-primary" onclick="window.location ='{{ shop.url }}'; return false;">{{ 'cart.general.buttoncontinue' | t }}</button>
+            </li>
+          </ul>
+        </div>
+        <div class="tables-block">
+          <table class="cart-table table pull-left">
+            {% for item in cart.items %}
+              <tr>
+                <td class="width01" rowspan="2">
+                  <a href="{{ item.url }}">
+                    <picture>
+                      <!--[if IE 9]><video style="display: none;"><![endif]-->
+                      <source srcset="{{ item | img_url: 'medium' }}, {{ item | img_url: 'large' }} 2x" media="(max-width: 767px)">
+                      <source srcset="{{ item | img_url: 'compact' }}">
+                      <!--[if IE 9]></video><![endif]-->
+                      <img src="{{ item | img_url: 'compact' }}" alt="image description" width="160" height="160">
+                    </picture>
+                  </a>
+                </td>
+                <th class="width02"><span class="product-name"><a href="{{ item.url }}">{{ item.product.title }}</a></span></th>
+                <th class="width03">QUANTITY: </th>
+                <th class="width04">ITEM TOTAL: </th>
+                <th>REMOVE?</th>
+              </tr>
+              <tr class="mobile-margin">
+                <td data-title="{{ item.product.title }}">
+                  <dl>
+                    <dt>ITEM PRICE:</dt>
+                    <dd><span {% if item.variant.price < item.variant.compare_at_price %} class="cost"{% endif %}>{{ item.price | money }} {% if item.variant.price < item.variant.compare_at_price %}<del>{{ item.variant.compare_at_price | money }}</del>{% endif %}</span></dd>
+                    {% assign variants = item.variant.title | split: ' / ' %}
+                    {% if variants.size == 1 and variants.first contains 'Default' %}{% else %}
+                    	{% assign options = '' %}
+                        {% assign variants_option_1 = '' %}
+                        {% assign variants_option_2 = '' %}
+                        {% assign variants_option_3 = '' %}
+
+                        {% for option in item.product.options %}
+                          {% assign option_opt = option | handleize %}
+                          {% assign options = options | append: option_opt | append: '//' %}
+                        {% endfor %}
+                        {% assign options = options | split: '//' | uniq %}
+
+                        {% for variant in item.product.variants %}
+                          {% if variant.option1 %}
+                            {% assign variants_option_1 = variants_option_1 | append: variant.option1 | append: '//' %}
+                          {% endif %}
+                          {% if variant.option2 %}
+                            {% assign variants_option_2 = variants_option_2 | append: variant.option2 | append: '//' %}
+                          {% endif %}
+                          {% if variant.option3 %}
+                            {% assign variants_option_3 = variants_option_3 | append: variant.option3 | append: '//' %}
+                          {% endif %}
+                        {% endfor %}
+
+                        {% assign variants_option_1 = variants_option_1 | split: '//' | uniq %}
+                        {% assign variants_option_2 = variants_option_2 | split: '//' | uniq %}
+                        {% assign variants_option_3 = variants_option_3 | split: '//' | uniq %}
+                    	
+                          {% for variant in variants %}
+                            {% for variant_option_1 in variants_option_1 %}
+                                {% if variant == variant_option_1 %}
+                                  <dt>{{ options[0] }}:</dt>
+                                  <dd>{{ variant }}</dd>
+                                {% endif %}
+                            {% endfor %}
+                            {% for variant_option_2 in variants_option_2 %}
+                                {% if variant == variant_option_2 %}
+                                  <dt>{{ options[1] }}:</dt>
+                                  <dd>{{ variant }}</dd>
+                                {% endif %}
+                            {% endfor %}
+                            {% for variant_option_3 in variants_option_3 %}
+                                {% if variant == variant_option_3 %}
+                               	  <dt>{{ options[2] }}:</dt>
+                                  <dd>{{ variant }}</dd>
+                                {% endif %}
+                            {% endfor %}
+                          {% endfor %}
+                    {% endif %}
+                  </dl>
+                </td>
+                <td data-title="QUANTITY:" class="mobile-mini">
+                  <input type="number" min="1" name="updates[{{item.variant.id}}]" class="form-control" value="{{ item.quantity }}" onfocus="this.select();">
+                </td>
+                <td data-title="ITEM TOTAL:" class="mobile-mini">
+                  <span class="total">{{ item.line_price | money }}</span>
+                </td>
+                <td data-title="REMOVE?" class="mobile-mini">
+                  <a href="/cart/change?line={{ forloop.index }}&quantity=0" class="remove"><i class="iconalt-remove"></i></a>
+                </td>
+              </tr>
+            {% endfor %}	
+          </table>
+          <div class="total-block">
+            <strong class="title">{{ 'cart.general.ordertitle' | t }}</strong>
+            <div class="form-group">
+              <label for="exampletextarea1">{{ 'cart.general.specialtitle' | t }} </label>
+              <textarea id="note" name="note" class="form-control" cols="30" rows="10"></textarea>
+            </div>
+            <div class="sub-total">
+              <strong class="title">{{ 'cart.general.subtotaltitle' | t }}</strong>
+              <span class="cost regular-price">{{ cart.total_price | money }}</span>
+              <p>{{ 'cart.general.taxtitle' | t }}</p>
+            </div>
+            <b class="btn-label">All set?</b>
+            <button class="btn btn-default" id="checkout" name="checkout" value="{{ 'cart.general.checkout' | t }}" type="submit">CHECKOUT NOW</button>
+            <input type="submit" id="update-cart" class="btn btn-primary" name="update" value="{{ 'cart.general.update' | t }}" />
+            {% if additional_checkout_buttons %}        
+            <div class="extra-checkout-buttons">
+              {{ content_for_additional_checkout_buttons }}
+            </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </fieldset>
+  </form>
+{% endif %}

@@ -1,0 +1,31 @@
+{% if settings.collection_tags %}
+    {% capture col_url%}{% if collection.url.size == 0 %}/collections/all{%else%}{{collection.url}}{%endif%}{%endcapture%}
+    {% if collection.all_tags.size > 0 %}
+    <div class="form-group">
+      <div class="fake-select">
+        {% if settings.use_ajax_loading_products %}
+        <select name="collection_tags" id="collection_tags" class="loc_on_change form-control">
+          <option value="all">{{ 'collections.general.all_items' | t }}</option>
+          {% for tag in collection.all_tags %}
+              <option value="{{ tag | handle }}"{% if current_tags contains tag %} selected="selected"{% endif %}>{{ tag }}</option>
+          {% endfor %}
+        </select>
+        {% else %}
+        <select name="collection_tags" id="collection_tags" class="loc_on_change form-control">
+          <option value="{{ col_url }}">{{ 'collections.general.all_items' | t }}</option>
+          {% for tag in collection.all_tags %}
+          <option value="{{col_url}}/{{ tag | handle }}"{% if current_tags contains tag %} selected="selected"{%endif%}>{{ tag }}</option>
+          {% endfor %}
+        </select>
+        <script type="text/javascript">
+          jQuery("select.loc_on_change :first").text('{{ 'collections.filter.title' | t }}');
+          jQuery("select.loc_on_change").change(function(){
+            if(jQuery(this).attr("value") == "#") return false;
+            window.location = jQuery(this).attr("value");
+          });
+        </script>
+        {% endif %}
+      </div>
+    </div>
+    {% endif %}
+{% endif %}

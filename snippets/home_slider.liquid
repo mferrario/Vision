@@ -1,0 +1,42 @@
+{% if settings.view_gallery %}
+  {% if settings.view_slide1 or settings.view_slide2 or settings.view_slide3 or settings.view_slide4 or settings.view_slide5 %}  
+    <div class="cycle-gallery">
+        <div class="cycle-pagination">
+          <!-- pagination generated here -->
+        </div>
+        <div class="mask">
+          <div class="slideset">
+            {% assign my_variable = 0 %}
+      		{% for i in (1..5) %}
+              {% capture curr_slide %}view_slide{{i}}{% endcapture %}
+      		  {% if settings[curr_slide] %}
+            	{% assign my_variable = my_variable | plus: 1 %}
+                <div class="slide">
+                  {% capture curr_image %}slide_image{{i}}.jpg{% endcapture %}
+                  {% capture curr_text %}title_slide{{i}}{% endcapture %}
+                  {% capture curr_description %}description_slide{{i}}{% endcapture %}
+                  {% capture link_text %}linktext_slide{{i}}{% endcapture %}
+                  {% capture link_url %}link_slide{{i}}{% endcapture %}
+                  {% capture position_text %}position_text_{{i}}{% endcapture %}
+                  <img onError="this.style.display = 'none';" src="{{ curr_image | asset_url }}" alt="image description" >
+                  <div class="carousel-caption {{ settings[position_text] }}">
+                    <strong class="sub-title">{{ settings[curr_text] }}</strong>
+                    <strong class="title">{{ settings[curr_description] }}</strong>
+                    <strong class="sub-title"><a href="{{ settings[link_url] }}">{{ settings[link_text] }}</a></strong>
+                  </div>
+                </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+      	{% if my_variable > 1 %}  
+          <a class="btn-prev carousel-control">
+            <span aria-hidden="true">&lt;</span>
+          </a>
+          <a class="btn-next carousel-control">
+            <span aria-hidden="true">&gt;</span>
+          </a>
+      	{% endif %}
+    </div>
+  {% endif %}
+{% endif %}

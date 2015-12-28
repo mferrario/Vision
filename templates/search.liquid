@@ -1,0 +1,26 @@
+<div class="collection-container container-fluid text-center">
+  	{% if search.performed %}
+  		{% if search.results == empty %}
+    		<h1>{{ 'general.search.no_results_title' | t }}</h1>
+  			<p>{{ 'general.search.no_results_html' | t: search: search.terms }}</p>
+  		{% else %}
+  			<h1>{{ 'general.search.results_title' | t }}</h1>
+  		{% endif %}
+  	{% endif %}
+	{% if search.performed %}
+		{% paginate search.results by settings.pagination_limit %}
+           	<ul class="product-list{% if settings.use_ajax_loading_products %} ajax-holder{% endif %}">
+              {% for product in search.results %}
+                {% include 'product-loop' %}
+              {% endfor %}
+            </ul>
+            {% if settings.use_ajax_loading_products %}
+                {% if paginate.next.is_link %}
+                    <a class="ajax-next" href="{{ paginate.next.url }}">{{ paginate.next.title }}</a>
+                {% endif %}
+            {% else %}
+              {% include 'pagination' %}
+            {% endif %}
+		{% endpaginate %}  
+	{% endif %} 
+</div>

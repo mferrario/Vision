@@ -1,0 +1,43 @@
+<header id="header">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-sm-12">
+          	{% if settings.use_logo %}
+              <div class="logo text-center"><a href="{{ shop.url }}"><img src="{{ 'logo.png' | asset_url }}" alt="{{ shop.name }}"></a></div>
+            {% else %}
+              <strong class="logo"><a href="{{ shop.url }}">{{ shop.name }}</a></strong>
+            {% endif %}  
+          </div>
+      </div>
+  </div>
+  {% include 'primary-menu' %}
+  <div class="line">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          {% if shop.customer_accounts_enabled %}
+            <div class="col-sm-6 hidden-xs hidden-sm">
+              <ul class="nav nav-pills pull-left">
+                {% if customer  %}
+                  <li><a href="/account">Your Account</a></li>
+                  <li>{{ 'customer.account.logout' | t | customer_logout_link }}</li>
+                {% else %}
+                  {% if shop.customer_accounts_optional %}	
+                      <li>{{ 'REGISTER' | customer_register_link }}</li>
+                  {% endif %}
+                  <li>{{ 'LOGIN' | customer_login_link }}</li>
+                {% endif %}
+              </ul>
+            </div>
+          {% endif %}
+          <div class=" col-md-offset-6">
+            <div class="pull-right">
+              {% include 'minicart' %}
+              {% include 'search-form' %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

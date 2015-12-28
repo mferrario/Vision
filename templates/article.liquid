@@ -1,0 +1,56 @@
+<div class="pagecontent">
+	<h1>{{ article.title }}</h1>
+  	{% if article.image %}<image src="{{ article | img_url: 'medium' }}" />{% endif %}	
+  {% assign published_at = article.published_at | date: format: 'short' %}
+    <p>{{ 'blogs.article.posted_on_date' | t: date: published_at }} {% if article.comments_enabled? %}, <span>{{ 'blogs.comments.comments_with_count' | t: count: article.comments_count }}</span>{% endif %}</p>
+	<div id="article-content">
+		{{ article.content }}
+    </div>
+	{% if blog.comments_enabled? %}
+		<div id="comments">
+			{% if article.comments.size > 0 %}
+				<h3>{{ 'blogs.comments.title' | t }}</h3>
+				<ul id="comment-list">
+					{% for comment in article.comments %}
+						<li>
+							<div class="comment-details">
+                              	{{ 'blogs.article.comment_meta_html' | t: author: comment.author, date: '' }}<time datetime="{{ comment.created_at | date: format: 'short' }}">{{ comment.created_at | date: format: 'short' }}</time>
+							</div>
+							<div class="comment">
+								{{ comment.content }}
+							</div>      
+						</li>
+					{% endfor %}
+				</ul>
+          		{% include 'pagination' %}
+			{% endif %}	
+			<div id="comment-form">
+				{% form "new_comment", article %}
+					<h3>{{ 'blogs.comments.form_title' | t }}</h3>    
+					{% if form.posted_successfully? %}
+						{% if blog.moderated? %}
+							<p class="notice success">{{ 'blogs.comments.success_moderated' | t }}</p>
+						{% else %}
+							<p class="notice success">{{ 'blogs.comments.success' | t }}</p>
+						{% endif %}
+					{% endif %}
+					{% if form.errors %}
+              			<p class="notice error">{{ 'blogs.comments.error' | t }}</p>
+					{% endif %}
+					<dl>
+						<dt class="{% if form.errors contains 'author' %}error{% endif %}"><label for="comment_author">{{ 'blogs.comments.name' | t }}</label></dt>
+						<dd><input type="text" id="comment_author" name="comment[author]" size="40" value="{{form.author}}" class="{% if form.errors contains 'author' %}input-error{% endif %}" /></dd>
+						<dt class="{% if form.errors contains 'email' %}error{% endif %}"><label for="comment_email">{{ 'blogs.comments.email' | t }}</label></dt>
+						<dd><input type="text" id="comment_email" name="comment[email]" size="40" value="{{form.email}}" class="{% if form.errors contains 'email' %}input-error{% endif %}" /></dd>
+						<dt class="{% if form.errors contains 'body' %}error{% endif %}"><label for="comment_body">{{ 'blogs.comments.message' | t }}</label></dt>
+						<dd><textarea id="comment_body" name="comment[body]" cols="40" rows="5" class="{% if form.errors contains 'body' %}input-error{% endif %}">{{form.body}}</textarea></dd>
+					</dl>
+                    <input type="submit" value="{{ 'blogs.comments.post' | t }}" class="btn" id="comment-submit" />
+					{% if blog.moderated? %}
+						<p class="hint">{{ 'blogs.comments.moderated' | t }}</p>
+					{% endif %}
+				{% endform %}
+			</div>
+		</div>
+	{% endif %}
+</div>

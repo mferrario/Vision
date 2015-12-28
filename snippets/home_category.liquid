@@ -1,0 +1,24 @@
+{% if settings.view_category and settings.home_collection != blank %}
+  {% assign home_cat = collections[settings.home_collection] %}
+  <div class="container-fluid">
+    <div class="product-carousel text-center">
+      <h2>{{ home_cat.title }}</h2>
+      {% if home_cat.products_count > 0 %}
+        <div class="mask slick-mask">
+          <div class="slideset slick-gallery slick-gallery-home">
+            {% paginate home_cat.products by settings.homecat_limit %}
+              {% for product in home_cat.products %}  
+                <div class="slide">
+                  <a href="{{ product.url }}">
+                    <img src="{{ product.featured_image | product_img_url: 'medium' }}" alt="{{ product.featured_image.alt | escape }}" width="240" height="240">
+                  </a>
+                </div>
+              {% endfor %}
+            {% endpaginate %}
+          </div>
+        </div>
+      {% endif %}
+      <div class="big-link"><a href="{{ home_cat.url }}">SHOP THE COLLECTION ›</a></div>
+    </div>
+  </div>
+{% endif %}

@@ -1,0 +1,69 @@
+<script type="text/javascript">
+   var selectCallback = function(variant, selector) {
+     var selectli = jQuery('.slideshow-pagination li');
+     var notfindli = true;
+     jQuery.each( selectli , function ( i , oneli )
+     {
+       $selectvar = jQuery(oneli).attr('variantids');
+       console.log( $selectvar.indexOf(variant.id) );
+       if( $selectvar.indexOf(variant.id) != -1 )
+       {
+         notfindli = false;
+         jQuery('.slideshow-pagination .active').removeClass('active');
+         //console.log( jQuery('.slideshow-pagination .active') );
+         jQuery( oneli ).addClass('active');
+         jQuery( oneli ).find('a').click();
+       }
+     });
+     if( notfindli )
+     {
+       jQuery('.slideshow-pagination .active').removeClass('active');
+       selectli.first().addClass('active');
+       selectli.first().click();
+     }
+     if (variant && variant.inventory_management == "shopify") {
+      if (variant.inventory_quantity > 0) {
+        jQuery('#variant-inventory-'+selector.product.id).text('We currently have ' + variant.inventory_quantity + ' in stock.');
+      } else {
+        jQuery('#variant-inventory-'+selector.product.id).text("This product is sold out");
+      }
+    } else {
+      jQuery('#variant-inventory-'+selector.product.id).text("This product is in stock");
+    }
+    if (variant && variant.featured_image) {
+      var newImage = variant.featured_image; // New image object.
+      var mainImageDomEl = jQuery('.featured img')[0]; // DOM element of main image we need to swap.
+      Shopify.Image.switchImage(newImage, mainImageDomEl, switchImage); // Define switchImage (the callback) in your theme's JavaScript file.
+    }
+    if (variant && variant.available) {
+      jQuery('#add-'+selector.product.id).removeAttr('disabled').removeClass('disabled'); // remove unavailable class from add-to-cart button, and re-enable button
+      jQuery('#product-quantity-'+selector.product.id).removeAttr('disabled'); // reenable quantity dropdown
+      {% if settings.display_quantity_display %}
+        {% if settings.display_quantity_dropdown == 'dropdown' %}
+          var field = jQuery('#product-quantity-'+selector.product.id+' option:selected'); // get qty field
+        {% elsif settings.display_quantity_dropdown == 'field' %}
+          var field = jQuery('#product-quantity-'+selector.product.id); // get qty field
+        {% endif %}
+      {% else %}  
+      	var field = jQuery('#product-quantity-'+selector.product.id); // get qty field
+      {% endif %}
+      //<![CDATA[
+      if(variant.price < variant.compare_at_price){
+        jQuery('#price-field-'+selector.product.id).html(Shopify.formatMoney(variant.price * field.val(), "{{ shop.money_format }}") + " <del>" + Shopify.formatMoney(variant.compare_at_price * field.val(), "{{ shop.money_format }}") + "</del>"); // update price field
+      } else {
+        jQuery('#price-field-'+selector.product.id).html(Shopify.formatMoney((variant.price * field.val()), "{{ shop.money_format }}")); // update price field
+      }
+      //]]>
+      jQuery('#price-'+selector.product.id).val(variant.price);
+      jQuery('#price-compare-'+selector.product.id).val(variant.compare_at_price);
+      jQuery('div .info-text').addClass('hidden');
+    } else {
+      jQuery('#add-'+selector.product.id).addClass('disabled').attr('disabled', 'disabled'); // set add-to-cart button to unavailable class and disable button
+      jQuery('#product-quantity-'+selector.product.id).attr('disabled', 'disabled'); // disable quantity dropdown
+      //var message = variant ? {{ 'products.product.sold_out_html' | t | json }} : {{ 'products.product.unavailable_html' | t | json }};
+      //jQuery('#price-field-'+selector.product.id).html(message); // update price-field message
+      jQuery('div .info-text').removeClass('hidden');
+      jQuery('#variant-inventory-'+selector.product.id).empty();
+    }
+  };
+</script>

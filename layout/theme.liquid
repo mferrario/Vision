@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page_title }}{% if current_tags %} &ndash; {{ 'general.meta.tagged' | t }} "{{ current_tags | join: ', ' }}"{% endif %}{% if current_page != 1 %} &ndash; {{ 'general.meta.page' | t }} {{ current_page }}{% endif %}{% unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless %}</title>
+  {% if page_description %}
+  <meta name="description" content="{{ page_description }}" />
+  {% endif %}
+  <link rel="canonical" href="{{ canonical_url }}" /> 
+  {% if settings.use_favicon %}
+  <link rel="shortcut icon" href="{{ 'favicon.png' | asset_url }}" type="image/png" />
+  <link rel="icon" href="{{ 'favicon.png' | asset_url }}" type="image/png" />
+  {% endif %}
+  {% include 'fb-open-graph-tags' %}
+  {% include 'twitter-cards' %}
+  {{ content_for_header }}
+  {% assign basePath = '' | asset_url | split: '?' %}
+  {% if basePath[0] != blank %}
+  <script type="text/javascript">
+    var pathInfo = {
+      base: '{{ basePath[0] }}',
+      css: '',
+      js: '',
+      swf: '',
+    }
+  </script>
+  {% endif %}
+
+  <!-- CSS ================================================== -->
+  {{ 'layout.css' | asset_url | stylesheet_tag }}
+  <!-- {{ 'bootstrap.css' | asset_url | stylesheet_tag }} -->
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">  
+
+  {{ '_main.scss.css' | asset_url | stylesheet_tag }}
+
+
+<!--   {{ '_main.org.css' | asset_url | stylesheet_tag }}
+ -->  
+  
+  
+  {{ '//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js' | script_tag }}
+  {{ '//code.jquery.com/jquery-migrate-1.2.1.js' | script_tag }}
+  {{ 'option_selection.js' | shopify_asset_url | script_tag }}
+  {{ 'api.jquery.js' | shopify_asset_url | script_tag }}
+  {{ 'shop.js' | asset_url | script_tag }}
+
+  {% if template contains 'customers' %}
+    {{ 'shopify_common.js' | shopify_asset_url | script_tag }}
+    {{ 'customer_area.js'  | shopify_asset_url | script_tag }}
+  	{{ 'customer.css' | asset_url | stylesheet_tag }}
+  {% endif %}
+  {{ 'scripts.js' | asset_url | script_tag }}
+  {{ 'bootstrap.min.js' | asset_url | script_tag }}
+  {{ 'jquery.main.js' | asset_url | script_tag }}
+  {{ 'js-menu.js' | asset_url | script_tag }}
+  <script type="text/javascript"> 
+  	Shopify.money_format = "{{shop.money_format}}"; 
+  </script>
+</head>
+<body id="page-{{template}}">
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+  <div id="wrapper">
+    <div class="w1">
+      {% include 'theme-header' %}
+      <div id="main">
+        {% if template != 'index' and template != 'collection' and template != 'product' and template != 'cart' %}<div class="container-fluid">{% endif %}
+          {% if template contains 'customers' %}<div class="pagecustomer">{% endif %}
+            {{ content_for_layout }}
+          {% if template contains 'customers' %}<div class="clearfix"></div></div>{% endif %}
+        {% if template != 'index' and template != 'collection' and template != 'product' and template != 'cart' %}</div>{% endif %}
+      </div>
+    </div>
+    {% include 'theme-footer' %}
+  </div>
+</body>
+</html>

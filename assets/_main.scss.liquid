@@ -1,0 +1,3611 @@
+/*
+colors
+
+$color_westar_approx: #dbd9d2;
+$color_asphalt_approx: #150e08;
+$color_pampas_approx: #f3f1ea;
+$color_ebb_approx: #e8e5de;
+$white:  white;
+$color_wild_sand_approx: #f5f5f5;
+$color_shark_approx: #262626;
+$white_20: rgba(255, 255, 255, .2);
+$color_tapa_approx: #7b7a76;
+$color_night_rider_approx: #1c150f;
+$color_asphalt_6_approx: rgba(21, 14, 8, .06);
+$color_nobel_approx: #b7b5af;
+$color_mountain_mist_approx: #94928d;
+$color_chestnut_rose_approx: #da5b4e;
+$white_60: rgba(255, 255, 255, .6);
+$black: black;
+$color_verdun_green_41_approx: rgba(70, 83, 0, .41);
+$color_verdun_green_13_approx: rgba(70, 83, 0, .13);
+$color_roman_approx: #dc6053;
+$red: red;
+$color_mercury_approx: #e6e6e6;
+$color_silver_chalice_approx: #aaa;
+$color_alto_approx: #ddd;
+$black_30: rgba(0, 0, 0, .3);
+
+
+
+ 
+
+*/
+
+/*
+==========================================
+========================================== 
+Breakpoint and Grid Variables
+==========================================
+==========================================
+*/
+
+
+$viewportIncrement: 1px;
+
+$small: 480px;
+$medium: 768px;
+$mediumLarge: 992px;
+$large: 1200px;
+
+$preMedium: $medium - $viewportIncrement;
+$preMediumLarge: $mediumLarge - $viewportIncrement;
+$preLarge: $large - $viewportIncrement;
+
+
+/*
+==========================================
+========================================== 
+xxxx. Font Styles
+==========================================
+==========================================
+*/
+
+@font-face {
+	font-family: "amatic_scregular";
+	src: url("amaticsc-regular-webfont.eot");
+	src: url("amaticsc-regular-webfont.eot?#iefix") format("embedded-opentype"), url("amaticsc-regular-webfont.woff2") format("woff2"), url("amaticsc-regular-webfont.ttf") format("truetype");
+	font-weight: normal;
+	font-style: normal;}
+
+@font-face {
+	font-family: "montserratregular";
+	src: url("montserrat-regular-webfont.eot");
+	src: url("montserrat-regular-webfont.eot?#iefix") format("embedded-opentype"), url("montserrat-regular-webfont.woff2") format("woff2"), url("montserrat-regular-webfont.ttf") format("truetype");
+	font-weight: normal;
+	font-style: normal;}
+
+@font-face {
+	font-family: "lucida_granderegular";
+	src: url("lucidagrande-webfont.eot");
+	src: url("lucidagrande-webfont.eot?#iefix") format("embedded-opentype"), url("lucidagrande-webfont.woff2") format("woff2"), url("lucidagrande-webfont.ttf") format("truetype");
+	font-weight: normal;
+	font-style: normal;}
+
+@font-face {
+	font-family: "icomoon-alt";
+	src: url("icomoon-alt.eot?d1um05");
+	src: url("icomoon-alt.eot?d1um05#iefix") format("embedded-opentype"), url("icomoon-alt.ttf?d1um05") format("truetype"), url("icomoon-alt.woff?d1um05") format("woff"), url("icomoon-alt.svg?d1um05#icomoon-alt") format("svg");
+	font-weight: normal;
+	font-style: normal;}
+
+
+$font_A: "amatic_scregular", Menlo, Monaco, Consolas, "Courier New", monospace;
+$font_B: "montserratregular", Helvetica, Arial, sans-serif;
+$font_C: "lucida_granderegular", Helvetica, Arial, sans-serif;
+$font_Icon: "icomoon-alt";
+$font_Z: 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+
+
+/*
+==========================================
+========================================== 
+xxxx. Main Body Styles
+==========================================
+==========================================
+*/
+
+
+html {
+	height: 100%;}
+
+body {
+  	background-color: #f3f1ea;
+  	color: #150e08;
+ 	font-size: 14px;
+  	font-family: $font_C;
+  	font-size: 14px;	
+  	line-height: 1.43;
+	min-width: 320px;
+	-webkit-text-size-adjust: 100%; 
+	margin: 0;
+	width: 100%;}
+
+a {
+	text-decoration: underline;}
+
+h1 {
+	letter-spacing: 3px;
+	line-height: 36px;
+	margin: 0 0 17px;
+	text-transform: uppercase;
+	word-spacing: -3px;}
+
+h2 {
+	letter-spacing: 12px;
+	margin: 0 0 42px;}
+
+h3 {
+	letter-spacing: 4px;
+	margin: 0 0 13px;}
+
+.pagecontent,
+.pagecustomer {
+	padding: 50px 0;}
+
+.errors {
+	line-height: 1;
+	padding: 14px 10px 1px;}	
+
+.tooltip {
+	font-family: $font_C;}	
+.popover{
+	font-family: $font_C;}
+
+/*
+==========================================
+========================================== 
+xxxx. Header
+==========================================
+==========================================
+*/
+
+#header {
+	padding-top: 60px;
+	position: relative;
+	z-index: 100;}
+
+#header .row > div {
+	position: static;}
+
+#header .line {
+	background: #e8e5de;
+	left: 0;
+	margin-bottom: 16px;
+	position: relative;
+	position: absolute;
+	top: 0;	
+	width: 100%;
+	z-index: 2;}
+
+#header .line .container-fluid {
+	max-width: 1007px;
+	position: relative;}
+
+#header .line form {
+	display: inline-block;
+	vertical-align: top;}
+
+#header .logo {
+	width: 194px;
+	margin: 0 auto 13px;}
+
+#header .logo img {
+	display: block;
+	width: 100%;
+	height: auto;}
+
+#header .cart {
+	margin: 7px 19px -61px 21px;}
+
+
+/*
+==========================================
+========================================== 
+xxxx. adsfasfasdfafasdf
+==========================================
+==========================================
+*/	
+
+.cycle-pagination ul,
+.slideshow .slideshow-pagination ul,
+.product-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;}
+
+.clearfix:after,
+#header:after,
+#header .line:after,
+.input-opener:after,
+.product-carousel.gallery-block .mask:after,
+.product-carousel .mask:after,
+.cart-heading:after,
+.tables-block:after {
+	display: block;
+	clear: both;
+	content: "";}
+
+.ellipsis {
+	overflow: hidden;
+	text-overflow: ellipsis; /* 2 */
+	white-space: nowrap; /* 1 */}
+
+
+#wrapper {
+	display: table;
+	height: 100%;
+	min-height: 100vh;
+	overflow: hidden;	
+	position: relative;
+	table-layout: fixed;
+	width: 100%;}
+
+#wrapper div.w1 {
+	display: table-cell;}
+
+
+
+.container-fluid {
+	max-width: 1204px;
+	margin: 0 auto;
+	padding: 0 15px;}
+
+
+
+
+
+/*
+==========================================
+========================================== 
+xxxx. Form Styles
+==========================================
+==========================================
+*/
+
+
+.input-box {
+	max-width: 194px;}
+
+.input-box .form-control {
+	border: 0;}
+
+.input-box i {
+	font-size: 18px;}
+
+.input-opener {
+	background: #e8e5de;	
+	display: block;
+	font: 11px $font_B;
+	height: 32px;
+	letter-spacing: 2px;
+	min-width: 194px;	
+	padding: 7px 10px 3px 17px;
+	text-transform: uppercase;
+	text-decoration: none;
+	-webkit-transition: background .2s linear;
+	transition: background .2s linear;}
+
+.input-opener span span {
+	display: inline-block;	
+	margin-top: 2px;
+	vertical-align: top;}
+
+.input-opener i {
+	float: right;
+	margin-left: 10px;}
+
+.input-opener .open-text {
+	display: block;}
+
+.input-opener .close-text {
+	display: none;}
+
+.input-opener .close-text i {
+	background: #f3f1ea;	
+	border-radius: 100%;
+	color: #150e08;
+	font-size: 9px;
+	height: 17px;
+	margin-right: 2px;
+	padding: 4px 1px 1px 3px;
+	width: 17px;
+	text-align: center;}
+
+.input-box .collapse,
+.input-box .collapsing {
+	background: #150e08;	
+	display: block;
+	display: block;
+	left: 16px;	
+	margin-top: 1px;
+	overflow: hidden;
+	padding: 0 10px;
+	position: absolute;
+	right: 112px;
+	top: 100%;	
+	z-index: 1;}
+
+.input-box .collapse .form-control,
+.input-box .collapsing .form-control {
+	background: #f3f1ea;
+	border-radius: 0;
+	display: block;
+	font-size: 18px;
+	font-weight: normal;
+	height: 70px;	
+	margin: 10px 0;
+	padding: 0 21px;	
+	text-align: left;
+	width: 100%;}
+
+.dropdown-menu {
+	border-width: 0 0 1px !important;
+	border-radius: 0;	
+	left: 16px;
+	letter-spacing: 4px;
+	min-width: 320px;
+	padding: 4px 0 0;}
+
+.dropdown-menu.dropdown-right {
+	left: auto;
+	right: 16px;}
+
+.dropdown-menu > li > a {
+	padding: 11px 16px 12px;}
+
+.dropdown-menu .divider {
+	margin: 0;}
+
+textarea.form-control {
+	height: 141px;
+	resize: none;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	max-width: 600px;
+}	
+
+.input-group .form-control {
+	background: rgba(21, 14, 8, .06);
+	font: 11px $font_B;
+	letter-spacing: 2px;
+	padding: 0 18px;
+	word-spacing: 2px;}
+
+.input-group .btn {
+	background: rgba(21, 14, 8, .06);
+	border: 0;
+	color: #150e08;
+	font: 700 15px/1 $font_A; 
+	
+	/* 
+	"amatic_scregular", Menlo, Monaco, Consolas, "Courier New", monospace;
+	*/
+	
+	margin: 0 !important;
+	padding-bottom: 0;
+	padding-top: 0;
+	position: relative;
+	transition: color .2s linear;
+	-webkit-transition: color .2s linear;}
+
+.input-group .btn:hover {
+	color: #7b7a76;}
+
+.input-group .btn:hover:after {
+	border-color: #7b7a76;}
+
+.input-group-btn {
+	vertical-align: top;
+}	
+
+/*
+==========================================
+========================================== 
+xxxx. Nav bar Styles
+==========================================
+==========================================
+*/
+
+.navbar-collapse.in {
+	height: 100vh;
+	overflow-y: auto;}
+
+
+.nav-pills {
+	font: 11px $font_B;
+	letter-spacing: 2px;
+	padding: 9px 0;}
+
+.nav-pills li + li:before {
+	display: inline-block;
+	content: "/";	
+	margin: 0 7px;
+	vertical-align: top;}
+
+.nav-pills li a {
+	display: inline-block;
+	padding: 0;
+	text-decoration: none;
+	vertical-align: top;}
+
+.nav-pills li a:hover {
+	background: none;
+	text-decoration: underline;}
+
+.navbar-default {
+	font-family: $font_B;
+	font-weight: 700;
+	text-transform: uppercase;}
+
+.navbar-default .navbar-nav {
+	display: table;
+	float: none;
+	padding: 0 5.54%;
+	width: 100%;}
+
+.navbar-default .navbar-nav > li {
+	display: table-cell;
+	float: none;
+	letter-spacing: 5px;
+	padding: 0 16px;
+	text-align: center;
+	text-indent: 3px;}
+
+.navbar-default a {
+	text-decoration: none;
+	transition: color .2s linear, background .2s linear;
+	-webkit-transition: color .2s linear, background .2s linear;}
+
+.navbar-default a:hover {
+	background: #150e08;
+	color: #f3f1ea;}
+
+.navbar-toggle {
+	font-size: 7px;
+	height: 51px;
+	line-height: 15px;
+	margin: 0;
+	padding: 13px 10px 5px;
+	text-transform: uppercase;}
+
+.navbar-toggle .icon-bar {
+	box-shadow: 0 0 1px 0 #b7b5af;
+	height: 2px;
+	margin: 0 auto;
+	width: 22px;}
+
+.navbar-toggle .icon-bar + .icon-bar {
+	margin-top: 5px;}
+
+
+
+/*
+==========================================
+========================================== 
+xxxx. Cart Styles
+==========================================
+==========================================
+*/
+
+.cart {
+	display: inline-block;
+	letter-spacing: 3px;
+	font: 11px $font_B;
+	text-decoration: none;
+	transition: color .2s linear;	
+	vertical-align: top;
+	-webkit-transition: color .2s linear;}
+
+.cart .num {
+	border-radius: 100%;
+	border: 2px solid #150e08;
+	background: #f3f1ea;
+	display: block;
+	font-size: 30px;
+	height: 57px;
+	letter-spacing: 0;
+	margin-bottom: 5px;
+	padding: 8px;
+	transition: border-color .2s linear;
+	-webkit-transition: border-color .2s linear;
+	width: 57px;}
+
+.cart:hover {
+	color: #94928d;}
+
+.cart:hover .num {
+	border-color: #94928d;}
+
+.cart-form {
+	border-top: 1px solid white;
+	padding-top: 20px;
+	padding-bottom: 130px;}
+
+.cart-heading {
+	padding: 9px 0 36px;}
+
+.cart-heading h2 {
+	font-size: 20px;
+	font-weight: 700;
+	letter-spacing: 9px;
+	line-height: 24px;
+	width: 35%;
+	word-spacing: 2px;}
+
+.cart-heading .btn-list {
+	margin: 5px 5.6% 0 10px;
+	max-width: 60%;}
+
+.cart-heading .btn-list li {
+	float: right;}
+
+.cart-table {
+	margin-right: 10px;
+	width: 70.3%;}
+
+.info-text {
+	color: #da5b4e;
+	font-weight: 700;
+	text-transform: uppercase;}
+
+.variants .info-text {
+	padding-top: 25px;}
+
+/*
+==========================================
+========================================== 
+xxxx. Welcome Styles
+==========================================
+==========================================
+*/
+
+.w1 {
+	height: 100%;
+	-webkit-transition: -webkit-transform .3s linear;
+	transition: transform .3s linear;
+}
+
+.welcome {
+	border-bottom: 1px solid rgba(255, 255, 255, .6);
+	color: #f3f1ea;	
+	font: 14px $font_B;
+	padding: 18px 27px;
+}
+
+.welcome a,
+.welcome span {
+	color: #f3f1ea;
+	position: relative;}
+
+.welcome a:after,
+.welcome span:after {
+	content: " >X>";
+	display: inline-block;
+	margin-left: 4px;
+	vertical-align: top;}
+
+.welcome a:hover {
+	text-decoration: underline;}
+
+
+/*
+==========================================
+========================================== 
+xxxx. Carousel Styles
+==========================================
+==========================================
+*/
+
+.carousel,
+.cycle-gallery {
+	margin-bottom: 93px;}
+
+.carousel-inner .item,
+.cycle-gallery .item {
+	overflow: hidden;}
+
+.carousel-inner img,
+.cycle-gallery img {
+	display: block;
+	height: auto;
+	width: 100%;}
+
+.cycle-gallery {
+	position: relative;}
+
+.cycle-gallery .mask {
+	overflow: hidden;
+	position: relative;}
+
+.cycle-gallery .slideset {
+	float: left;
+	width: 99999px;}
+
+.cycle-gallery .slide {
+	float: left;
+	overflow: hidden;
+	position: relative;}
+
+.cycle-gallery .slide.active {
+	z-index: 1;}
+
+.carousel-caption {
+	bottom: 50%;
+	font-family: $font_B;	
+	left: 15%;
+	line-height: 1;
+	right: 15%;
+	text-shadow: none;
+	-ms-transform: translateY(50%);
+	-webkit-transform: translateY(50%);
+	transform: translateY(50%);}
+
+.carousel-caption.text-right {
+	text-align: right;}
+
+.carousel-caption.text-left {
+	text-align: left;}
+
+.carousel-caption.black {
+	color: black;}
+
+.carousel-caption .title {
+	font-weight: 700;
+	font-size: 69px;
+	display: block;
+	margin-bottom: 7px;}
+
+.carousel-caption .sub-title {
+	font-size: 20px;
+	font-weight: normal;
+	margin-bottom: 8px;}
+
+.carousel-caption a {
+	color: inherit;
+	text-decoration: none;}
+
+.carousel-caption a:hover {
+	text-decoration: underline;}
+
+.carousel-control {
+	background: none !important;
+	bottom: auto;
+	cursor: pointer;
+	font: 128px/1 $font_A;
+	left: 31px;
+	opacity: 1;
+	text-shadow: none;
+	text-decoration: none;
+	top: 50%;
+	width: auto;
+	transform: translateY(-50%);
+	transition: color .3s linear;	
+	-ms-transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	-webkit-transition: color .3s linear;
+	z-index: 10;}
+
+.carousel-control.right,
+.carousel-control.btn-next {
+	left: auto;
+	right: 31px;}
+
+.carousel-control:hover {
+	color: #7b7a76;
+	opacity: 1;}
+
+.cycle-pagination,
+.carousel-indicators {
+	bottom: 0;
+	margin-bottom: 4px;}
+
+.cycle-pagination li,
+.carousel-indicators li {
+	background: white;
+	border-width: 2px;
+	height: 18px !important;
+	margin: 0 1px !important;
+	width: 18px !important;
+	transition: background .3s linear;
+	-webkit-transition: background .3s linear;}
+
+.cycle-pagination li:hover,
+.carousel-indicators li:hover {
+	background: #7b7a76;}
+
+.cycle-pagination {
+	bottom: 0;
+	left: 50%;
+	position: absolute;
+	transform: translateX(-50%);
+	-webkit-transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+	z-index: 10;}
+
+.cycle-pagination li {
+	border-radius: 100%;
+	border: 2px solid #1c150f;
+	display: inline-block;
+	margin: 0 3px 6px !important;
+	vertical-align: top;}
+
+.cycle-pagination li.active,
+.cycle-pagination li:hover {
+	background: #7b7a76;}
+
+.cycle-pagination a {
+	display: block;
+	overflow: hidden;
+	text-indent: 101%;
+	white-space: nowrap;}
+
+
+
+/*
+==========================================
+========================================== 
+xxxx. Product Styles
+==========================================
+==========================================
+*/
+
+.product-carousel {
+	margin-bottom: 109px;
+	position: relative;}
+
+.product-carousel .mask {
+	margin: 0 96px 43px;
+	position: relative;
+	overflow: hidden;}
+
+.product-carousel .mask.slick-mask {
+	position: static;}
+
+.product-carousel .slideset {
+	width: 100%;
+	width: 99999px;
+	float: left;}
+
+.product-carousel .slideset.slick-gallery {
+	width: 100%;}
+
+.product-carousel .slide {
+	float: left;
+	padding: 16px 3px;
+	width: 246px;}
+
+.product-carousel img {
+	display: block;
+	height: auto;
+	width: 100%;}
+
+.product-carousel .btn-prev,
+.product-carousel .btn-next {
+	border-radius: 100%;
+	border: 2px solid #150e08;
+	color: #150e08;
+	cursor: pointer;
+	font: 700 35px/1 $font_A;
+	height: 50px;
+	left: 24px;
+	margin-top: -13px;
+	padding: 7px;
+	position: absolute;
+	text-align: center;
+	text-decoration: none;	
+	top: 50%;
+	width: 50px;
+	transform: translateY(-50%);
+	transition: color .2s linear, border-color .2s linear;	
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-webkit-transition: color .2s linear, border-color .2s linear;
+	z-index: 100;}
+
+.product-carousel .btn-prev:hover,
+.product-carousel .btn-next:hover {
+	border-color: #7b7a76;
+	color: #7b7a76;}
+
+.mac .product-carousel .btn-prev,
+.mac
+    .product-carousel .btn-next {
+	padding-top: 4px;}
+
+.mac.firefox .product-carousel .btn-prev,
+.mac.firefox
+    .product-carousel .btn-next {
+	padding-top: 7px;}
+
+.product-carousel .btn-next {
+	left: auto;
+	right: 24px;}
+
+
+/*
+==========================================
+========================================== 
+xxxx. Big link Styles
+==========================================
+==========================================
+*/
+
+
+.big-link {
+	font: 700 20px $font_B;
+	letter-spacing: 6px;
+	padding-bottom: 10px;}
+
+.big-link a {
+	color: #150e08;
+	text-decoration: none;}
+
+.big-link a:hover {
+	text-decoration: underline;}
+
+
+
+/*
+==========================================
+========================================== 
+xxxx. Category Styles
+==========================================
+==========================================
+*/
+
+.category-box {
+	color: white;
+	display: block;
+	font: 24px/28px $font_B;
+	margin-bottom: 2px;
+	text-decoration: none;}
+
+.category-box:hover {
+	color: white;}
+
+.category-box img {
+	display: block;
+	height: auto;
+	width: 100%;}
+
+.category-box .category-text {
+	bottom: 10px;
+	left: 15.2%;
+	position: absolute;
+	right: 10px;
+	top: 32.3%;
+	z-index: 1;}
+
+.category-box .category-text.full {
+	bottom: auto;
+	top: 50%;
+	left: 12.5%;
+	right: 12.5%;
+	transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);}
+
+.category-box .category-text.full .title {
+	line-height: 92px;}
+
+.category-box .title {
+	display: block;
+	font: 72px/74px $font_A;
+	letter-spacing: -3px;
+	margin-bottom: 1px;}
+
+.category-box .bottom-link {
+	bottom: 17px;
+	font-size: 19px;
+	left: 0;
+	letter-spacing: 9px;
+	position: absolute;
+	right: 0;
+	z-index: 1;}
+
+.category-box p {
+	letter-spacing: 11px;
+	margin: 0 5px 10px;}
+
+
+
+/*
+==========================================
+========================================== 
+xxxx. Product Image Styles
+==========================================
+==========================================
+*/
+
+
+.image-bg,
+.image-bg-light {
+	display: block;
+	position: relative;}
+
+.image-bg:after,
+.image-bg-light:after {
+	background: rgba(70, 83, 0, .41);
+	bottom: 0;
+	content: "";	
+	left: 0;
+	position: absolute;
+	right: 0;
+	top: 0;	
+	transition: opacity .3s linear;
+	-webkit-transition: opacity .3s linear;}
+
+.image-bg:hover:after,
+.image-bg-light:hover:after {
+	opacity: 0;}
+
+.image-bg-light:after {
+	background: rgba(70, 83, 0, .13);}
+
+
+
+/*
+==========================================
+========================================== 
+xxxx. Section Styles
+==========================================
+==========================================
+*/
+
+
+section {
+	margin-bottom: 121px;}
+
+section:last-child {
+	margin-bottom: 115px;}
+
+
+
+/*
+==========================================
+========================================== 
+xxxx. Blog Styles
+==========================================
+========================================== 
+*/
+
+
+.blog-box img {
+	display: block;
+	height: auto;
+	margin-bottom: 15px;
+	width: 100%;}
+
+.blog-box a {
+	color: inherit;
+	text-decoration: none;}
+
+.blog-box a:hover {
+	text-decoration: underline;}
+
+.blog-text {
+	padding: 0 17% 0 0;}
+
+.more {
+	font: 41px $font_A;
+	letter-spacing: -1px;
+	text-decoration: none;}
+
+.more:hover {
+	text-decoration: underline;}
+
+
+/*
+==========================================
+========================================== 
+xxxx. Slideshow Styles
+==========================================
+==========================================
+*/
+
+
+.slideshow {
+	position: relative;}
+
+.slideshow .slide {
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 1;}
+
+.slideshow .slide.active {
+	z-index: 2;}
+
+.slideshow .slideshow-pagination {
+	margin: 18px -10px 10px;
+	position: relative;
+	z-index: 3;}
+
+.slideshow .slideshow-pagination ul {
+	width: 100%;}
+
+.slideshow .slideshow-pagination li {
+	box-sizing: border-box;
+	display: inline-block;
+	padding: 0 11px 11px;
+	margin-right: -8px;
+	vertical-align: middle;
+	width: 20%;}
+
+.slideshow .slideshow-pagination img {
+	max-width: 102px;}
+
+.slideshow img {
+	display: block;
+	height: auto;
+	width: 100%;}
+
+.product-form .slideshow {
+	margin-top: 3px;
+	margin-right: -14px;}
+
+
+
+
+/*
+==========================================
+========================================== 
+xxxx. Page Customer Styles
+==========================================
+==========================================
+*/
+
+
+.pagecustomer input.btn,
+.btn {
+	padding: 15px 24px 13px;
+	text-transform: uppercase;
+	text-align: center;}
+
+.pagecustomer input.btn[type="submit"],
+.btn[type="submit"] {
+	height: 50px;
+	padding: 5px 10px;}
+
+.pagecustomer input.btn.input-sm,
+.btn.input-sm {
+	height: 32px;
+	padding: 5px 10px;}
+
+#header .pagecustomer input.btn.input-sm,
+#header
+    .btn.input-sm {
+	padding-right: 13px;
+	padding-left: 3px;}
+
+.pagecustomer input.btn.full,
+.btn.full {
+	display: block;
+	width: 100%;}
+
+.pagecustomer input.btn:hover,
+.btn:hover {
+	opacity: .8;}
+
+.pagecustomer input.btn {
+	background: #150e08 !important;
+	border-color: white !important;
+	border-radius: 0 !important;
+	box-shadow: none !important;
+	color: #f3f1ea !important;
+	font-weight: 700 !important;
+	padding: 15px 24px 13px !important;
+	text-shadow: none !important;}
+
+
+/*
+==========================================
+========================================== 
+xxxx. Product Details Styles
+==========================================
+==========================================
+*/
+
+.product-form {
+	font-family: $font_B;
+	padding: 47px 0 30px;
+	word-spacing: 5px;}
+
+.product-form .form-group {
+	padding-right: 19px;}
+
+.product-form .divider {
+	margin: 10px 0 17px;}
+
+.product-form p {
+	margin-bottom: 19px;}
+
+.product-content {
+	padding-left: 52px;}
+
+.product-content .price,
+.cost {
+	color: #dc6053;
+	display: block;
+	font: 24px $font_B;
+	letter-spacing: 2px;
+	margin-bottom: 38px;}
+
+.product-content .price del,
+.cost del {
+	color: #94928d;}
+
+.product-content .price.regular-price,
+.cost.regular-price {
+	color: #150e08;}
+
+.product-content .price {
+	color: #150e08;}
+
+
+
+/*
+==========================================
+==========================================
+xxxx. xxxxx Styles
+==========================================
+========================================== 
+*/
+
+
+#main .divider {
+	background: #150e08;
+	border: 0;
+	display: block;
+	height: 1px;
+	width: 100%;}
+
+#main .divider.white {
+	background: white;}
+
+
+
+/*
+==========================================
+==========================================
+xxxx. Pager Styles
+==========================================
+========================================== 
+*/
+
+
+
+.pager {
+	font-family: $font_B;
+	font-weight: 700;
+	letter-spacing: 4px;
+	margin: 24px 0 0;}
+
+.pager:after {
+	clear: none;}
+
+.pager li {
+	width: 230px;}
+
+.pager li > a,
+.pager li > span {
+	padding: 0;}
+
+.pager li a {
+	text-decoration: none;}
+
+.pager li a:hover {
+	text-decoration: underline;}
+
+
+/*
+==========================================
+==========================================
+xxxx. Breadcrumb Styles
+==========================================
+==========================================
+*/
+
+
+.breadcrumb {
+	font-family: $font_B;
+	letter-spacing: 1px;
+	margin: 0 10px 46px;
+	overflow: hidden;
+	padding: 0;
+	text-transform: uppercase;}
+
+.breadcrumb > li + li:before {
+	padding: 0 9px;}
+
+.breadcrumb a {
+	text-decoration: none;}
+
+.breadcrumb a:hover {
+	text-decoration: underline;}
+
+
+
+/*
+==========================================
+==========================================
+xxxx. Intro Styles
+==========================================
+==========================================
+*/
+
+ 
+
+.intro {
+	position: relative;}
+
+.intro img {
+	display: block;
+	height: auto;
+	width: 100%;}
+
+.intro .intro-text {
+	left: 0;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	width: 100%;}
+
+.intro h1 {
+	color: #f3f1ea;
+	font-size: 50px;
+	letter-spacing: 24px;}
+
+.intro.not-image {
+	padding-top: 30px;}
+
+.intro.not-image h1 {
+	color: #150e08;
+	line-height: 1;}
+
+.intro.not-image .intro-text {
+	position: static;}
+
+
+/*
+==========================================
+==========================================
+xxxx. Product List Styles
+==========================================
+==========================================
+*/
+
+
+.product-list {
+	margin: 0 -10px;}
+
+.product-list li {
+	display: inline-block;
+	margin: 0 -4px 51px 0;
+	vertical-align: top;
+	width: 25%;}
+
+.product-list img {
+	height: auto;
+	margin-bottom: 29px;
+	max-width: 100%;}
+
+.product-list .cost {
+	font: 14px $font_B;
+	letter-spacing: 1px;}
+
+.product-list .product-text {
+	padding: 0 15px;}
+
+.product-list .product-text a {
+	text-decoration: none;}
+
+.product-list .product-name {
+	display: block;
+	font: 14px/17px $font_B;
+	letter-spacing: 1px;
+	margin-bottom: 14px;
+	text-transform: uppercase;}
+
+
+
+/*
+==========================================
+==========================================
+xxxx. xxxxxxxxxxx
+==========================================
+==========================================
+*/
+
+.product-name,
+.cost {
+	text-decoration: none;}
+
+.collection-container {
+	font-size: 16px;
+	line-height: 24px;
+	padding-top: 27px;
+	padding-bottom: 78px;}
+
+.collection-container p {
+	margin-bottom: 37px;}
+
+/*
+==========================================
+==========================================
+xxxx. Filter Styles
+==========================================
+==========================================
+*/
+
+
+.filter-label {
+	display: block;
+	font: 700 14px $font_B;
+	letter-spacing: 4px;
+	margin-bottom: 3px;}
+
+.filter-box {
+	margin: 0 auto 50px;
+	max-width: 640px;}
+
+.filter-box .form-group {
+	display: inline-block;
+	margin-right: -4px;
+	padding: 0 20px;
+	text-transform: uppercase;
+	width: 50%;	
+	vertical-align: top;}
+
+.filter-box.full {
+	max-width: none;}
+
+
+/*
+==========================================
+==========================================
+xxxx. Pagination Styles
+==========================================
+========================================== 
+*/
+
+
+.pagination {
+	display: block;
+	font: 700 14px $font_B;
+	text-align: center;}
+
+.pagination li {
+	display: inline-block;
+	padding: 0 0 10px 1px;
+	vertical-align: top;}
+
+.pagination li a {
+	border-radius: 100% !important;
+	height: 42px;
+	padding: 9px 5px;
+	width: 42px;}
+
+.pagination li:first-child,
+.pagination li:last-child,
+.pagination li.next,
+.pagination li.prev {
+	letter-spacing: 4px;
+	margin-right: 10px;}
+
+.pagination li:first-child a,
+.pagination li:last-child a,
+.pagination li.next a,
+.pagination li.prev a {
+	border-radius: 0 !important;
+	padding-left: 7px;
+	width: auto;}
+
+.pagination li:last-child,
+.pagination li.prev {
+	margin: 0 0 0 10px;}
+
+
+/*
+==========================================
+==========================================
+xxxx. xxx Styles
+==========================================
+========================================== 
+*/
+
+
+
+.btn-list .btn {
+	font-family: $font_B;
+	font-weight: 700;
+	letter-spacing: 5px;
+	padding: 15px 24px 13px !important;}
+
+
+
+/*
+==========================================
+==========================================
+xxxx. Table Styles
+==========================================
+========================================== 
+*/
+
+.table {
+	font-family: $font_B;}
+
+.table th {
+	font-size: 12px;
+	font-weight: normal;
+	letter-spacing: 1px;
+	line-height: 17px !important;
+	text-transform: uppercase;}
+
+.table .product-name {
+	font-size: 14px;}
+
+.table img {
+	margin-left: -10px;}
+
+.table td {
+	padding: 1px 10px 19px !important;
+	vertical-align: top !important;}
+
+.table td:last-child {
+	text-align: center;}
+
+.table .jcf-number {
+	display: inline-block;
+	max-width: 80px;
+	vertical-align: middle;
+	width: 100%;}
+
+.table .width01 {
+	padding: 10px 10px 19px !important;
+	vertical-align: top !important;
+	width: 23%;}
+
+.table .width03 {
+	width: 19.3%;}
+
+.table .width04 {
+	width: 16%;}
+
+.table dl {
+	display: inline-block;
+	margin: 0;
+	text-transform: uppercase;
+	vertical-align: middle;
+	width: 100%;}
+
+.table .total {
+	font-size: 18px;
+	font-weight: 700;}
+
+.table a {
+	color: inherit;
+	text-decoration: none;}
+
+.table a:hover {
+	text-decoration: underline;}
+
+.table a.remove {
+	border: 2px solid #150e08;
+	border-radius: 100%;
+	display: inline-block;
+	font-size: 14px;
+	height: 35px;
+	line-height: 20px;
+	padding: 7px 3px;
+	text-decoration: none;
+	vertical-align: middle;
+	width: 35px;
+	transition: color .2s linear, border-color .2s linear;
+	-webkit-transition: color .2s linear, border-color .2s linear;}
+
+.table a.remove:hover {
+	border-color: #dc6053;
+	color: #dc6053;}
+
+#customer_orders .table .total {
+	text-align: center;}
+
+#customer_orders .table .date {
+	width: auto;}
+
+
+
+/*
+==========================================
+==========================================
+xxxx. Data List Styles
+
+The <dl> tag is used in conjunction with <dt> 
+(defines terms/names) and <dd> (describes each term/name).
+==========================================
+========================================== 
+*/
+
+dl {
+	font-family: $font_B;}
+
+dl dt {
+	float: left;
+	margin-right: 7px;}
+
+dl dd {
+	display: block;
+	letter-spacing: 1px;
+	overflow: hidden;}
+
+dl .cost {
+	font-size: inherit;
+	letter-spacing: inherit;
+	line-height: inherit;
+	margin: 0;}
+
+/*
+==========================================
+==========================================
+xxxx. Total Bloack Styles
+==========================================
+========================================== 
+*/
+
+.total-block {
+	border-left: 1px solid #150e08;
+	font: 12px $font_B;
+	overflow: hidden;
+	padding-left: 4%;
+	padding-bottom: 79px;
+	position: relative;
+	top: 10px;}
+
+.total-block .title {
+	display: block;
+	font-weight: normal;
+	letter-spacing: 2px;
+	line-height: 1;
+	margin-bottom: 38px;}
+
+.total-block label {
+	font-weight: normal;
+	letter-spacing: 1px;
+	margin-bottom: 7px;}
+
+.total-block .form-group {
+	margin-bottom: 40px;}
+
+.total-block .sub-total {
+	padding-bottom: 37px;}
+
+.total-block .sub-total .title {
+	margin-bottom: 5px;}
+
+.total-block .cost {
+	font-size: 28px;
+	margin-bottom: 5px;}
+
+.total-block .btn-label {
+	display: block;
+	font-size: 14px;
+	margin-bottom: 7px;
+	text-transform: uppercase;}
+
+.total-block .btn {
+	display: block;
+	letter-spacing: 5px;
+	margin-bottom: 15px;
+	width: 75%;}
+
+/*
+==========================================
+==========================================
+xxxx. Footer Styles
+==========================================
+========================================== 
+*/	
+
+
+#footer {
+	background: #e8e5de;
+	display: table-footer-group;
+	height: 1%;
+	width: 100%;}
+
+#footer .footer-holder {
+	overflow: hidden;
+	padding: 65px 0 13px;}
+
+#footer h3 {
+	font-size: 19px;
+	letter-spacing: 9px;
+	margin-bottom: 14px;}
+
+#footer .holder {
+	padding-right: 16%;}
+
+#footer ul {
+	font-family: $font_B;
+	letter-spacing: 3px;
+	padding: 6px 0 0;
+	text-transform: uppercase;}
+
+#footer ul li {
+	margin-bottom: 8px;}
+
+#footer ul a {
+	text-decoration: none;}
+
+#footer ul a:hover {
+	text-decoration: underline;}
+
+#footer .line {
+	font: 11px $font_B;
+	letter-spacing: 2px;
+	padding: 38px 0;}
+
+#footer .line p {
+	margin: 20px 0;}
+
+.form-control {
+	box-shadow: none;
+	font: 700 14px $font_B;
+	letter-spacing: 4px;
+	padding: 0 25px;}
+
+#footer .input-group {
+	padding: 3px 17px 30px 0;}
+
+#footer .input-group .form-control {
+	border: 0;}
+
+#footer .input-group div.mce_inline_error {
+	position: relative;
+	top: 26px;}	
+
+
+/*
+==========================================
+==========================================
+xxxx. Payment Styles (Footer)
+==========================================
+========================================== 
+*/	
+
+.payment-list {
+	padding: 10px 0 !important;}
+
+.payment-list li {
+	margin-right: 9px;}
+
+.payment-list li a:hover {
+	opacity: .7;
+	text-decoration: none;}
+
+/*
+==========================================
+==========================================
+xxxx. Social Media Styles (Footer)
+==========================================
+========================================== 
+*/	
+.social-networks {
+	font-size: 37px;
+	line-height: 42px;
+	padding: 0 !important;}
+
+.social-networks li {
+	margin-right: -1px;}
+
+.social-networks a {
+	color: black;
+	text-decoration: none;
+	transition: color .3s linear;
+	-webkit-transition: color .3s linear;}
+
+.social-networks a:hover {
+	color: #7b7a76;
+	text-decoration: none !important;}
+
+.social-networks .iconalt-facebook {
+	font-size: 33px;}
+
+.social-networks .iconalt-twitter {
+	font-size: 42px;}
+
+
+
+/*
+==========================================
+==========================================
+xxxx. Email Form Styles
+==========================================
+========================================== 
+*/	
+
+.email-form .input-group .btn {
+	line-height: 1;
+	padding-bottom: 1px;
+	padding-top: 0;
+	width: 40px;}
+
+.mac .email-form .input-group .btn {
+	padding-bottom: 4px;}
+
+.firefox .email-form .input-group .btn {
+	padding-top: 2px;}
+
+.mac.firefox .email-form .input-group .btn {
+	padding-bottom: 3px;}
+
+.email-form .input-group .btn:after {
+	border: 1px solid #150e08;
+	border-radius: 100%;
+	content: "";
+	height: 19px;
+	left: 50%;
+	margin-top: -1px;
+	position: absolute;
+	top: 50%;
+	width: 19px;
+	transform: translateX(-50%) translateY(-50%);
+	transition: border-color .2s linear;
+	-webkit-transform: translateX(-50%) translateY(-50%);
+	-ms-transform: translateX(-50%) translateY(-50%);
+	-webkit-transition: border-color .2s linear;}
+
+
+
+/*
+==========================================
+==========================================
+xxxx. Fake-Select Fields
+==========================================
+========================================== 
+
+.fake-select is a custom drop-down list menu
+that is used On Collections page (collections/all)
+
+*/	
+
+.fake-select,
+.selector-wrapper {
+	position: relative;}
+
+.fake-select select,
+.selector-wrapper select {
+	border-radius: 0;
+	-webkit-appearance: none;}
+
+.fake-select:before,
+.selector-wrapper:before {
+	background: #e8e5de;
+	border-left: 1px solid white;
+	bottom: 1px;
+	content: "";
+	position: absolute;
+	pointer-events: none;
+	right: 1px;
+	top: 1px;
+	width: 49px;
+	z-index: 1;}
+
+.fake-select:after,
+.selector-wrapper:after {
+	content: ">X>";
+	line-height: 1;
+	font-size: 24px;
+	font-weight: 700;	
+	margin-top: -12px;
+	pointer-events: none;
+	position: absolute;
+	right: 20px;
+	top: 50%;
+	z-index: 1;
+	transform: rotate(90deg);
+	-webkit-transform: rotate(90deg);
+	-ms-transform: rotate(90deg);}
+
+.fake-select option,
+.selector-wrapper option {
+	font-size: 14px;}
+
+.fake-select option:hover,
+.fake-select option:focus,
+.selector-wrapper option:hover,
+.selector-wrapper option:focus {
+	background: red !important;}
+
+.selector-wrapper {
+	margin-top: 30px;
+	position: relative;}
+
+.selector-wrapper label {
+	bottom: 100%;
+	display: block;
+	left: 0;
+	max-width: 100%;
+	position: absolute;
+	text-overflow: ellipsis;
+	white-space: nowrap;}
+
+.selector-wrapper select {
+	padding: 0 25px;}
+
+.selector-wrapper .single-option-selector {
+	background: #e8e5de;
+	border: 1px solid white;
+	color: #150e08;
+	display: block;
+	height: 50px;
+	width: 100%;}
+
+
+/*
+==========================================
+==========================================
+xxxx. JavaScript Custom Forms
+==========================================
+========================================== 
+
+This JavaScript tool allows smooth cross-browser 
+customization of form elements with CSS
+PSD2HTML - http://psd2html.com/jcf
+
+*/	
+
+.jcf-number {
+	display: block;
+	height: 50px;
+	position: relative;
+	margin-right: 16px;}
+
+.jcf-number input {
+	-moz-appearance: textfield;}
+
+.jcf-number input::-webkit-inner-spin-button,
+.jcf-number input::-webkit-outer-spin-button {
+	-webkit-appearance: none;}
+
+.jcf-number input {
+	box-sizing: border-box;
+	height: 100%;
+	margin: 0;
+	padding: 0 40px 0 10px;
+	text-align: center;}
+
+.jcf-number .jcf-btn-dec,
+.jcf-number .jcf-btn-inc {
+	background: #dddad3;
+	border-left: 1px solid white;
+	cursor: pointer;
+	position: absolute;
+	height: 50%;
+	width: 29px;
+	right: 1px;
+	top: 1px;}
+
+.jcf-number .jcf-btn-dec {
+	bottom: 1px;
+	top: auto;}
+
+.jcf-number .jcf-btn-dec:hover,
+.jcf-number .jcf-btn-inc:hover {
+	background: #e6e6e6;}
+
+.jcf-number.jcf-disabled .jcf-btn-dec:hover,
+.jcf-number.jcf-disabled .jcf-btn-inc:hover {
+	background: #aaa;}
+
+.jcf-number .jcf-btn-dec:before,
+.jcf-number .jcf-btn-inc:before {
+	content: ">X>";
+	font: 700 24px/1 $font_B;
+	left: 50%;
+	margin: -9px 0 0 -5px;
+	position: absolute;
+	top: 50%;
+	transform: rotate(-90deg);
+	-webkit-transform: rotate(-90deg);
+	-ms-transform: rotate(-90deg);}
+
+.jcf-number .jcf-btn-dec:before {
+	content: "<X<";
+	margin: -16px 0 0 -5px;}
+
+.jcf-number.jcf-disabled .jcf-btn-dec:before,
+.jcf-number.jcf-disabled .jcf-btn-inc:before,
+.jcf-number .jcf-btn-dec.jcf-disabled:before,
+.jcf-number .jcf-btn-inc.jcf-disabled:before {
+	opacity: .3;}
+
+.jcf-number.jcf-disabled input {
+	background: #ddd;}
+
+.jcf-disabled {
+	background: #ddd !important;}
+
+
+
+
+/*
+==========================================
+==========================================
+xxxx. Common custom form elements styles
+==========================================
+========================================== 
+*/
+
+
+
+.zoom-image-holder {
+	position: relative;
+	-ms-touch-action: none;}
+
+.zoom-image-holder a {
+	display: block;
+	height: 100%;
+	width: 100%;}
+
+.zoom-image-holder img {
+	display: block;
+	height: 100%;
+	width: 100%;}
+
+.slideshow .zoom-image-popup {
+	background: rgba(0, 0, 0, .3);
+	border: 1px solid #000;
+	height: 100px;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100px;
+	z-index: 999;}
+
+.slideshow .zoom-image-big {
+	background: #fff;
+	height: 100%;
+	left: 0;
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	width: 100%;}
+
+.mobile-device .slideshow .zoom-image-big {
+	display: none;}
+
+.slideshow .zoom-image-big img {
+	left: 100%;
+	min-width: 100%;
+	min-height: 100%;	
+	position: absolute;
+	top: 0;
+	width: auto;}
+
+ 
+/*
+==========================================
+==========================================
+xxxx. Outside zoom styles
+==========================================
+========================================== 
+*/
+
+.zoom-item.outside {
+	overflow: visible;}
+
+.zoom-item.outside .zoom-image-holder,
+.zoom-item.outside .zoom-image-holder a {
+	cursor: -webkit-zoom-in;
+	cursor: zoom-in;}
+
+.zoom-item.outside .zoom-image-big {
+	border: 2px solid #000;
+	height: 300px;
+	left: 100%;
+	margin: 20px 0 0;
+	top: 0;
+	width: 300px;}
+
+.zoom-item.outside .zoom-image-popup {
+	background: none;
+	border: 0;
+	height: 20px;
+	width: 20px;}
+
+
+/*
+==========================================
+==========================================
+xxxx. Arrows styles
+==========================================
+========================================== 
+*/
+
+.slick-prev,
+.slick-next {
+	border: none;
+	background: transparent;
+	color: transparent;
+	cursor: pointer;
+	display: block;
+	font-size: 0;
+	height: 20px;
+	line-height: 0;
+	margin-top: -10px;
+	outline: none;
+	padding: 0;
+	position: absolute;
+	top: 50%;
+	width: 20px;}
+
+.slick-prev:hover,
+.slick-prev:focus,
+.slick-next:hover,
+.slick-next:focus {
+	background: transparent;
+	color: transparent;
+	outline: none;}
+
+.slick-prev:hover:before,
+.slick-prev:focus:before,
+.slick-next:hover:before,
+.slick-next:focus:before {
+	opacity: 1;}
+
+.slick-prev.slick-disabled:before,
+.slick-next.slick-disabled:before {
+	opacity: .25;}
+
+.slick-prev:before,
+.slick-next:before {
+	color: white;
+	font-family: "slick";
+	font-size: 20px;
+	line-height: 1;
+	opacity: .75;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;}
+
+.slick-prev {
+	left: -25px;}
+
+[dir="rtl"] .slick-prev {
+	left: auto;
+	right: -25px;}
+
+.slick-prev:before {
+	content: "Back Arrow";}
+
+[dir="rtl"] .slick-prev:before {
+	content: "Front Arrow";}
+
+.slick-next {
+	right: -25px;}
+
+[dir="rtl"] .slick-next {
+	left: -25px;
+	right: auto;}
+
+.slick-next:before {
+	content: "Front Arrow";}
+
+[dir="rtl"] .slick-next:before {
+	content: "Back Arrow";}
+
+/*
+==========================================
+==========================================
+xxxx. Dots styles
+==========================================
+========================================== 
+*/
+
+.slick-dots {
+	bottom: -45px;
+	display: block;
+	list-style: none;
+	padding: 0;
+	position: absolute;
+	text-align: center;
+	width: 100%;}
+
+.slick-dots li {
+	cursor: pointer;
+	display: inline-block;
+	height: 20px;
+	margin: 0 5px;
+	padding: 0;
+	position: relative;
+	width: 20px;}
+
+.slick-dots li button {
+	background: transparent;
+	border: 0;
+	color: transparent;
+	cursor: pointer;
+	display: block;
+	height: 20px;
+	font-size: 0;
+	line-height: 0;
+	outline: none;
+	padding: 5px;
+	width: 20px;}
+
+.slick-dots li button:hover,
+.slick-dots li button:focus {
+	outline: none;}
+
+.slick-dots li button:hover:before,
+.slick-dots li button:focus:before {
+	opacity: 1;}
+
+.slick-dots li button:before {
+	color: black;
+	content: "dot";
+	font-family: "slick";
+	font-size: 6px;
+	height: 20px;
+	left: 0;
+	line-height: 20px;
+	opacity: .25;
+	position: absolute;
+	text-align: center;
+	top: 0;
+	width: 20px;	
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;}
+
+.slick-dots li.slick-active button:before {
+	color: black;
+	opacity: .75;}
+
+
+
+/*
+==========================================
+==========================================
+xxxx. Slick Slider
+==========================================
+==========================================
+ 
+Responsive Slider plugin for jQuery
+https://plugins.jquery.com/slick/
+
+*/
+
+.slick-slider {
+	display: block;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-ms-touch-action: pan-y;
+	touch-action: pan-y;
+	-webkit-tap-highlight-color: transparent;}
+
+.slick-list {
+	display: block;
+	margin: 0;
+	overflow: hidden;
+	position: relative;
+	padding: 0;}
+
+.slick-list:focus {
+	outline: none;}
+
+.slick-list.dragging {
+	cursor: pointer;
+	cursor: hand;}
+
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+	-webkit-transform: translate3d(0, 0, 0);
+	-ms-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);}
+
+.slick-track {
+	display: block;
+	left: 0;
+	position: relative;
+	top: 0;}
+
+.slick-track:before,
+.slick-track:after {
+	content: "";
+	display: table;}
+
+.slick-track:after {
+	clear: both;}
+
+.slick-loading .slick-track {
+	visibility: hidden;}
+
+.slick-slide {
+	display: none;
+	float: left;
+	height: 100%;
+	min-height: 1px;}
+
+[dir="rtl"] .slick-slide {
+	float: right;}
+
+.slick-slide img {
+	display: block;}
+
+.slick-slide.slick-loading img {
+	display: none;}
+
+.slick-slide.dragging img {
+	pointer-events: none;}
+
+.slick-initialized .slick-slide {
+	display: block;}
+
+.slick-loading .slick-slide {
+	visibility: hidden;}
+
+.slick-vertical .slick-slide {
+	border: 1px solid transparent;
+	display: block;
+	height: auto;}
+
+.slick-arrow.slick-hidden {
+	display: none;}
+
+
+
+/*
+==========================================
+========================================== 
+xxxx. My Account Styles
+==========================================
+==========================================
+*/
+
+#customer_orders:first-child,
+#customer_sidebar:first-child {
+	padding-right: 20px;
+}
+
+
+
+
+/*
+==========================================
+========================================== 
+xxxx. Social Icons
+==========================================
+==========================================
+
+Provides an icon with alternate text
+
+*/
+
+
+[class^="iconalt-"],
+[class*=" iconalt-"] {
+	font-family: $font_Icon;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	line-height: 1; 
+	speak: none;
+	text-transform: none;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;}
+
+.iconalt-remove:before {
+	content: "\e902";}
+
+.iconalt-search:before {
+	content: "\e900";}
+
+.iconalt-cart:before {
+	content: "\e901";}
+
+.iconalt-twitter:before {
+	content: "\f099";}
+
+.iconalt-facebook:before {
+	content: "\f09a";}
+
+.iconalt-facebook-f:before {
+	content: "\f09a";}
+
+.iconalt-instagram:before {
+	content: "\f16d";}
+
+.iconalt-pinterest-p:before {
+	content: "\f231";}
+
+/*
+==========================================
+==========================================
+xxxx. Media Queries Styles
+==========================================
+==========================================
+*/
+
+
+
+/* 
+Large devices (large desktops, browser window is greater than 768px) 
+*/
+@media (min-width: $medium) {
+
+	.product-carousel.mini {
+		margin: 0;
+		padding: 49px 0 10px;}
+
+	.product-carousel.mini h2 {
+		letter-spacing: 0;
+		margin: 0;}
+
+	.product-carousel.mini .mask {
+		margin: 0 61px 43px;}
+
+	.product-carousel.mini .slide {
+		padding: 12px 3px;}
+
+	.product-carousel.mini .btn-prev {
+		left: 1px;}
+
+	.product-carousel.mini .btn-next {
+		right: 1px;}
+}
+
+/* 
+Large devices (large desktops, browser window is smaller than 1200px) 
+*/
+@media (max-width: $large) {
+
+	.navbar-default .navbar-nav {
+		padding: 0;}
+
+	.navbar-default .navbar-nav > li {
+		padding: 0 5px;}
+
+	.dropdown-menu {
+		left: 5px;}
+
+	.dropdown-menu.dropdown-right {
+		right: 5px;}
+}
+
+/* 
+Large devices (large desktops, browser window is smaller than 1200px) 
+*/
+@media (max-width: $preLarge) {
+
+	/*
+		Order Total in Cart
+	*/
+	.total-block .btn {
+		width: 100%;
+		max-width: 600px;
+	}
+}
+
+/* Medium devices (desktops, browser window is bigger than 992px and up) */
+@media (min-width: $mediumLarge) {
+
+	/*
+	.input-openr is for the gloabl search box
+	form field 
+	*/
+	.input-opener {
+		background: #dbd9d2;}
+
+	.input-opener[aria-expanded="true"] {
+		background: #150e08;}
+
+	.input-opener[aria-expanded="true"] .open-text {
+		display: none;}
+
+	.input-opener[aria-expanded="true"] .close-text {
+		color: #f3f1ea;
+		display: block;}
+}
+
+/* 
+Medium devices (desktops, browser window is smaller than 991px) 
+*/
+@media (max-width: $preMediumLarge) {
+
+
+	/*
+	==========================================
+	==========================================
+	xxxx. Main (Medium Devices)
+	==========================================
+	==========================================
+	*/
+	
+	body {
+		font-size: 11px;}
+
+	h1 {
+		font-size: 19px;
+		letter-spacing: 1px;
+		line-height: 18px;
+		margin-bottom: 8px;
+		word-spacing: 1px;	}
+
+	h2 {
+		font-size: 16px;
+		letter-spacing: 8px;
+		line-height: 17px;
+		margin-bottom: 20px;
+		word-spacing: 2px; }
+
+	h3 {
+		font-size: 16px;
+		line-height: 15px;
+		margin-bottom: 10px; }
+
+	#customer-account h1 {
+		text-align: center; }
+
+	#header {
+		background: #e8e5de;
+		padding-top: 0;	}
+
+	#header > .container-fluid {
+		background: #f3f1ea; }
+
+	#header .line {
+		background: none;
+		float: right;
+		position: static;
+		margin: 0;
+		width: 66.66%; }
+
+	#header .line .pull-right {
+		float: none !important; }
+
+	#header .line .pull-right.cart {
+		float: left !important;}
+
+	#header .line form {
+		float: left;
+		width: 50%;}
+
+	#header .line .container-fluid {
+		padding: 0;
+		position: static;	}
+
+	#header .logo {
+		margin: 10px auto 13px;
+		width: 100px;	}
+
+	#header .cart {
+		margin: 0;
+		width: 50%; }
+
+	/*
+	==========================================
+	==========================================
+	xxxx. Form Fields (Medium Devices)
+	==========================================
+	==========================================
+	*/
+
+	.input-box {
+		max-width: none; }
+
+	.input-opener {
+		border: solid white;
+		border-width: 1px 0;
+		height: 51px;
+		font-size: 18px;
+		min-width: 10px;
+		padding: 15px;
+		text-align: center;	}
+
+	.input-opener i {
+		float: none;}
+
+	.input-box .collapse,
+	.input-box .collapsing {
+		left: 0;
+		margin: 0;
+		padding: 0 5px;
+		right: 0;
+		width: 100%; }
+
+	.input-box .collapse .form-control,
+	.input-box .collapsing .form-control {
+		height: 30px;
+		font-size: 11px;
+		margin: 5px 0;
+		text-align: center;	}
+
+	/*
+	==========================================
+	==========================================
+	xxxx. Cart (Medium Devices)
+	==========================================
+	==========================================
+	*/		
+
+	.cart {
+		border: solid white;
+		border-width: 1px 1px 1px 0;
+		height: 51px;
+		font-size: 17px;
+		padding: 11px;	}
+
+	.cart .num {
+		border-width: 1px;
+		display: inline-block;
+		font-size: 9px;
+		height: 18px;
+		margin: 0 -21px 0 0;
+		padding: 3px;
+		position: relative;
+		vertical-align: top;
+		width: 18px;	}
+
+	.cart .iconalt-cart {
+		display: inline-block;
+		margin-top: -14px;
+		vertical-align: top;	}
+
+	/*
+	==========================================
+	==========================================
+	xxxx. NavBar (Medium Devices)
+	==========================================
+	==========================================
+	*/				
+
+	.navbar-default {
+		background: none;
+		border: 0;
+		float: left;
+		margin: 0;
+		position: static;
+		width: 33.33%; }
+
+	.navbar-default .container-fluid {
+		padding: 0;	}
+
+	.navbar-default .navbar-toggle {
+		border-width: 1px 1px 1px 0;
+		float: none;
+		width: 100%;	}
+
+	.navbar-default .navbar-nav {
+		display: block;
+		margin: 0;	}
+
+	.navbar-default .navbar-nav > li {
+		display: block;
+		letter-spacing: 0;
+		padding: 0;
+		word-spacing: 0;	}
+
+	.navbar-default .navbar-nav > li > a {
+		color: #f3f1ea;
+		font-size: 15px;
+		font-weight: normal;
+		padding: 7px 24px;
+		text-align: left;	}
+
+	.navbar-default .navbar-nav > li > a span {
+		position: relative;	}
+
+	.navbar-default .navbar-nav > li > a span:after {
+		content: " >X>";
+		display: inline-block;
+		vertical-align: top;	}
+
+	.navbar-default .navbar-nav > li > a:hover {
+		background-color: #f5f5f5;
+		color: #262626;	}
+
+	.navbar-default .navbar-nav .open .dropdown-menu > li > a {
+		color: #f3f1ea; }
+
+	.navbar-default .dropdown-menu {
+		display: block;
+		float: none;
+		font-size: 12px;
+		padding: 0 0 2px;
+		position: static;	}
+
+	.navbar-default .dropdown-menu li a {
+		line-height: 1.43 !important;
+		padding: 3px 38px 4px !important;	}
+
+	.navbar-default .dropdown-menu .divider {
+		display: none; }
+
+	.navbar-toggle {
+		display: block; }
+
+	.navbar-collapse {
+		background: #150e08;
+		border: 0;
+		display: block !important;
+		margin: 0 !important;
+		padding-bottom: 30px;
+		position: absolute;
+		right: 100%;
+		top: 0;
+		width: 231px;
+		z-index: 100;}
+
+
+	/*
+	==========================================
+	==========================================
+	xxxx. Drop Down (Medium Devices)
+	==========================================
+	==========================================
+	*/	
+
+	.dropdown-menu {
+		min-width: 100%;
+		letter-spacing: 0;
+		border-color: rgba(255, 255, 255, .2) !important;
+		border-style: solid !important;
+	}
+
+	.dropdown-menu > li > a {
+		white-space: normal;
+		color: #f3f1ea;
+	}
+
+
+	.nav-active .w1 {
+		-webkit-transform: translateX(231px);
+		-ms-transform: translateX(231px);
+		transform: translateX(231px);
+	}
+
+	/*
+	==========================================
+	==========================================
+	xxxx. Carousel (Medium Devices)
+	==========================================
+	==========================================
+	*/		
+
+	.carousel-inner img,
+	.cycle-gallery img {
+		min-height: 187px;
+		width: auto;	}
+
+	.carousel-caption {
+		background: #150e08;
+		padding: 17px 15px 23px;
+		position: static;
+		text-align: center !important;
+		transform: translateY(0);
+		-webkit-transform: translateY(0);
+		-ms-transform: translateY(0);	}
+
+	.carousel-caption .title {
+		font-size: 23px;
+		letter-spacing: -1px;
+		margin: 1px 0 12px; }
+
+	.carousel-caption .sub-title {
+		font-size: 13px;
+		letter-spacing: 6px;}
+
+	.carousel-caption .sub-title a {
+		font-size: 10px;
+		letter-spacing: 3px; }
+
+	.carousel-control {
+		font-size: 45px;
+		line-height: 1;
+		left: 9px;
+		margin-top: -51px;	}
+
+	.carousel-control.right {
+		right: 9px;	}
+
+	.cycle-pagination {
+		display: none;	}
+
+	/*
+	==========================================
+	==========================================
+	xxxx. Other (Medium Devices)
+	==========================================
+	==========================================
+	*/			
+
+	.category-box .category-text {
+		top: 10%;
+		bottom: 10%; }
+
+	.image-bg:hover:after,
+	.image-bg-light:hover:after {
+		opacity: 1;
+	}		
+
+	/*
+	==========================================
+	==========================================
+	xxxx. Slide Show (Medium Devices)
+	==========================================
+	==========================================
+	*/	
+
+	.product-form .slideshow {
+		max-width: 400px;
+		margin: 0 auto; }
+
+	.slideshow .slideshow-pagination {
+		margin: 13px 0 12px;
+		display: block; }
+
+	.slideshow .slideshow-pagination ul {
+		display: block;
+		text-align: center; }
+
+	.slideshow .slideshow-pagination li {
+		margin: 0;
+		margin: 0 -2px;
+		padding: 0;
+		width: auto;	}
+
+	.slideshow .slideshow-pagination li.active a {
+		background: #7b7a76; }
+
+	.slideshow .slideshow-pagination img {
+		display: none; }
+
+	.slideshow .slideshow-pagination a {
+		background: white;
+		border: 1px solid #1c150f;
+		border-radius: 100%;
+		display: block;
+		height: 9px;
+		margin: 0;
+		width: 9px;
+		transition: background .3s linear;
+		-webkit-transition: background .3s linear;	}
+
+	.slideshow .slideshow-pagination a:hover {
+		background: #7b7a76; }
+
+	.slideshow.not-enough-slides .slideshow-pagination {
+		display: none; }
+
+
+	/*
+	==========================================
+	==========================================
+	xxxx. Product Page (Medium Devices)
+	==========================================
+	==========================================
+	*/	
+
+	.product-holder {
+		max-width: 400px;
+		margin: 0 auto; }
+
+	.pagecustomer input.btn[type="submit"],
+	.btn[type="submit"] {
+		height: 40px; }
+
+	.product-form {
+		line-height: 12px;
+		padding: 14px 0 3px;
+		text-align: center;	}
+
+	.product-form .form-group {
+		margin-bottom: 9px;
+		padding: 0 25px;	}
+
+	.product-form .divider {
+		margin: 20px 0 8px;	}
+
+	.product-form p {
+		margin-bottom: 12px;	}
+
+	.product-form .product-carousel {
+		margin-bottom: 0;
+		padding: 27px 0 10px;	}
+
+	.product-content {
+		padding: 0; }
+
+	.product-content .price,
+	.cost {
+		font-size: 12px;
+		letter-spacing: 0;
+		margin-bottom: 13px; }
+
+	.pager {
+		font-size: 7px;
+		letter-spacing: 2px;
+		margin: 0 40px 13px;
+		overflow: hidden;	}
+
+	.pager li {
+		width: auto; }
+
+	/*
+	==========================================
+	==========================================
+	xxxx. Breadcrumb (Medium Devices)
+	==========================================
+	==========================================
+	*/	
+
+	.breadcrumb {
+		font-size: 8px;
+		overflow: hidden;
+		letter-spacing: 0;
+		margin: -7px 0 15px;
+	}
+
+	.breadcrumb > li + li:before {
+		padding: 0 3px;
+	}
+
+
+	/*
+	==========================================
+	==========================================
+	xxxx. Collections List (Medium Devices)
+	==========================================
+	==========================================
+	*/		
+
+	.intro h1 {
+		font-size: 30px; }
+
+	.product-list li {
+		width: 50%; }
+
+	/*
+	==========================================
+	==========================================
+	xxxx. Cart (Medium Devices)
+	==========================================
+	==========================================
+	*/	
+
+	.cart-form {
+		padding-bottom: 25px; }
+
+	.cart-heading h2 {
+		font-size: 16px;
+		line-height: 20px; }
+
+	.btn-list .btn {
+		letter-spacing: 2px;
+		padding: 10px 15px 8px !important;	}
+
+	.cart-table {
+		float: none !important;
+		margin: 0;
+		width: auto;	}
+
+	.total-block {
+		border: 0;
+		padding-left: 0;
+		text-align: center;
+		top: 0;	}
+
+	.total-block .btn {
+		margin: 0 auto 15px; }
+
+	textarea.form-control {
+		margin: 0 auto; }
+
+	/*
+	==========================================
+	==========================================
+	xxxx. Footer (Medium Devices)
+	==========================================
+	==========================================
+	*/	
+
+	#footer {
+		font-size: 9px;
+		line-height: 12px;
+		text-align: center;	}
+
+	#footer .footer-holder {
+		padding: 20px 0 11px;	}
+
+	#footer .container-fluid {
+		max-width: 630px; }
+
+	#footer h3 {
+		font-size: 12px;
+		letter-spacing: 6px;
+		line-height: 17px;
+		margin-bottom: 6px;	}
+
+	#footer .holder {
+		padding: 0 0 18px;	}
+
+	#footer .input-group {
+		padding: 0; }
+
+	#footer .mobile-inline {
+		display: table;
+		font-size: 9px;
+		letter-spacing: 0;
+		width: 100%;	}
+
+	#footer .mobile-inline li {
+		display: table-cell;
+		padding: 0 5px;
+		width: 33.33%;	}
+
+	#footer .line {
+		font-size: 9px;
+		line-height: 1;
+		padding: 6px 0; }
+
+	#footer .line br {
+		display: none; }
+
+	#footer .email-form {
+		max-width: 490px;
+		margin: 0 auto;
+		padding: 0 45px;	}
+
+	.payment-list {
+		margin-bottom: -8px !important;
+		padding-bottom: 0 !important; }
+
+	.payment-list li {
+		margin: 0 !important; }
+
+	.payment-list img {
+		display: block;
+		height: 27px;
+		width: auto; }
+
+	.social-networks {
+		font-size: 26px;
+		margin-bottom: 0 !important; }
+
+	.social-networks li {
+		margin-right: 1px;
+		margin-bottom: 2px !important; }
+
+	.social-networks .iconalt-facebook {
+		font-size: 26px; }
+
+	.social-networks .iconalt-instagram {
+		font-size: 28px; }
+
+	.social-networks .iconalt-twitter {
+		font-size: 31px; }
+
+	.form-control {
+		font-size: 11px;
+		height: 40px;
+		letter-spacing: 3px;	}
+
+	#footer .input-group {
+		padding: 1px 0 20px;
+		margin: 0 auto; }
+
+	#footer .input-group .form-control {
+		height: 24px;
+		letter-spacing: 0; }
+
+	#footer .input-group div.mce_inline_error {
+		top: 15px; }
+
+	.input-group .form-control {
+		font-size: 9px;
+		padding: 0 0 0 8px; }
+
+	.email-form .input-group .btn {
+		font-size: 11px;
+		height: 24px;
+		padding-top: 1px;
+		width: 30px;	}
+
+	.mac .email-form .input-group .btn {
+		padding-top: 1px;
+		padding-bottom: 0;}
+
+	.firefox .email-form .input-group .btn {
+		padding-top: 3px; }
+
+	.mac.firefox .email-form .input-group .btn {
+		padding-bottom: 1px; }
+
+	.email-form .input-group .btn:after {
+		height: 16px;
+		margin-top: 0;
+		width: 16px;	}
+
+	.email-form .input-group .btn {
+		padding-top: 2px;	}
+
+	.mac .email-form .input-group .btn {
+		padding-top: 0; }
+
+	.firefox .email-form .input-group .btn {
+		padding-top: 3px; }
+
+	/*
+	==========================================
+	==========================================
+	xxxx. Collections (Medium Devices)
+	==========================================
+	==========================================
+	*/	
+
+	.fake-select:before,
+	.selector-wrapper:before {
+		width: 38px;}
+
+	.fake-select:after,
+	.selector-wrapper:after {
+		font-size: 15px;
+		margin-top: -8px;
+		right: 16px;	}
+
+	/*
+	==========================================
+	==========================================
+	xxxx. JavaScript Custom Form (Medium Devices)
+	==========================================
+	==========================================
+	*/		
+
+	.jcf-number {
+		height: 40px; }
+
+	.jcf-number .jcf-btn-dec:before,
+	.jcf-number .jcf-btn-inc:before {
+		font-size: 15px;
+		margin: -6px 0 0 -4px; }
+
+	.jcf-number .jcf-btn-dec:before {
+		margin: -9px 0 0 -4px; }
+
+	.zoom-image-holder a {
+		pointer-events: none; }
+}
+
+/* 
+Small devices (tablets, browser window is smaller than 768px) 
+*/
+@media (max-width: $medium) {
+
+	/*
+	==========================================
+	==========================================
+	xxxx. Main (Small Devices)
+	==========================================
+	==========================================
+	*/	
+
+	section {
+		margin-bottom: 54px; }
+
+	section:last-child {
+		margin-bottom: 0; }
+
+	#customer_orders .table {
+		padding-bottom: 0; }
+
+	#customer_orders .table th,
+	#customer_orders .table td {
+		padding-bottom: 0 !important;
+		text-align: center !important;	}
+
+
+	/*
+	==========================================
+	==========================================
+	xxxx. Carousel (Small Devices)
+	==========================================
+	==========================================
+	*/	
+
+	.container-fluid.mobile-full {
+		padding: 0; }
+
+	.carousel,
+	.cycle-gallery {
+		margin-bottom: 57px; }
+
+	.product-carousel {
+		margin-bottom: 44px; }
+
+	.product-carousel.gallery-block .mask {
+		margin: 0 auto;
+		overflow: visible;
+		width: 184px;	}
+
+	.product-carousel.gallery-block .slide {
+		padding: 3px 12px 22px;
+		width: 184px;	}
+
+	.product-carousel .mask {
+		margin: 0 auto;
+		overflow: visible;
+		width: 184px;	}
+
+	.product-carousel .slide {
+		float: left;
+		padding: 3px 12px 22px;
+		width: 184px !important;	}
+
+	.product-carousel .slide img {
+		max-width: 100% !important;
+		width: auto;	}
+
+	.product-carousel .slick-mask {
+		width: 100%;	}
+
+	.product-carousel .slick-list {
+		overflow: visible;
+		width: 100%;	}
+
+	/*
+	==========================================
+	==========================================
+	xxxx. Collections (Small Devices)
+	==========================================
+	==========================================
+	*/	
+
+	.big-link {
+		font-size: 10px;
+		letter-spacing: 3px; }
+
+	.category-box {
+		font-size: 12px;
+		line-height: 12px; }
+
+	.category-box .title {
+		font-size: 40px;
+		line-height: 33px;
+		letter-spacing: -2px;
+		margin-bottom: 8px; }
+
+	.category-box .category-text {
+		left: 11%;
+		top: 28%;	}
+
+	.category-box .category-text.full {
+		left: 16%;
+		right: 16%; }
+
+	.category-box .category-text.full .title {
+		font-size: 36px;
+		line-height: 46px; }
+
+	.category-box .bottom-link {
+		bottom: 6px;
+		font-size: 9px;
+		letter-spacing: 4px;	}
+
+	.category-box p {
+		letter-spacing: 5px; }
+
+
+	/*
+	==========================================
+	==========================================
+	xxxx. Blog (Small Devices)
+	==========================================
+	==========================================
+	*/	
+
+	.blog-box {
+		margin-bottom: 40px; }
+
+	.blog-box:last-child {
+		margin-bottom: 30px; }
+
+	.blog-box p {
+		margin-bottom: 9px; }
+
+	.blog-text {
+		line-height: 15px;
+		padding: 3px 15px 15px; }
+
+	.more {
+		font: 700 10px $font_B;
+		letter-spacing: 3px; }
+
+
+	/*
+	==========================================
+	==========================================
+	xxxx. Product List (Small Devices)
+	==========================================
+	==========================================
+	*/	
+
+	.intro h1 {
+		font-size: 14px;
+		letter-spacing: 7px; }
+
+	.product-list {
+		margin: 0 27px; }
+
+	.product-list li {
+		display: block;
+		margin: 0 0 60px;
+		width: auto;	}
+
+	.product-list img {
+		margin-bottom: 24px; }
+
+	.product-list .product-text {
+		margin: 0 -2px; }
+
+	.product-list .product-name {
+		font-size: 9px;
+		line-height: 10px;
+		letter-spacing: 0;
+		margin-bottom: 11px; }
+
+	.product-list .cost {
+		font-size: 9px;
+		letter-spacing: 0; }
+
+	.collection-container {
+		font-size: 11px;
+		line-height: 12px;
+		padding-top: 14px;
+		padding-bottom: 5px; }
+
+	.collection-container p {
+		margin-bottom: 12px; }
+
+	/*
+	==========================================
+	==========================================
+	xxxx. Filters (Small Devices)
+	==========================================
+	==========================================
+	*/	
+
+	.filter-label {
+		font-size: 11px; }
+
+	.filter-box {
+		margin-bottom: 37px; }
+
+	.filter-box .form-group {
+		padding: 0 5px; }
+
+	.filter-box .fake-select:before {
+		width: 29px; }
+
+	.filter-box .fake-select:after {
+		font-size: 12px;
+		margin-top: -6px;
+		right: 12px;}
+
+	.filter-box .form-control {
+		font-size: 9px;
+		letter-spacing: 1px;
+		height: 30px;
+		padding-left: 15px;	}
+
+	/*
+	==========================================
+	==========================================
+	xxxx. Pagination (Small Devices)
+	==========================================
+	==========================================
+	*/	
+
+	.pagination {
+		font-size: 11px;
+		padding-bottom: 40px;
+		position: relative;	}
+
+	.pagination li {
+		padding: 0 3px 10px; }
+
+	.pagination li a {
+		height: 36px;
+		width: 36px; }
+
+	.pagination li:first-child,
+	.pagination li:last-child {
+		bottom: 0;
+		position: absolute;
+		max-width: 50%;
+		right: 50%;	}
+
+	.pagination li:last-child {
+		left: 50%;
+		right: auto; }
+
+	/*
+	==========================================
+	==========================================
+	xxxx. Cart (Small Devices)
+	==========================================
+	==========================================
+	*/		
+
+	.cart-form {
+		padding-top: 3px;
+		text-align: center;	}
+
+	.cart-heading {
+		padding: 9px 20px 0; }
+
+	.cart-heading h2 {
+		float: none !important;
+		font-size: 12px;
+		line-height: 15px;
+		letter-spacing: 5px;
+		margin-bottom: 12px;
+		width: auto;
+		word-spacing: 1px;	}
+
+	.cart-heading .btn-list {
+		margin: 0; }
+
+	.cart-heading .btn-list li {
+		float: none; }
+
+	.cart-heading .btn-list .btn {
+		font-size: 11px; }
+
+	/*
+	==========================================
+	==========================================
+	xxxx. Button List (Small Devices)
+	==========================================
+	==========================================
+	*/
+
+	.btn-list {
+		float: none !important;
+		max-width: none !important; }
+
+	.btn-list li {
+		display: block;
+		margin-bottom: 15px; }
+
+	.btn-list .btn {
+		display: block;
+		letter-spacing: 4px;
+		max-width: 400px;
+		margin: 0 auto;
+		padding: 12px 15px 11px !important;
+		width: 100%;	}
+
+	/*
+	==========================================
+	==========================================
+	xxxx. Table (Small Devices)
+	==========================================
+	==========================================
+	*/
+
+	.table {
+		display: block;
+		font-size: 9px;
+		padding: 0 15px 46px;
+		text-align: center;	}
+
+	.table tbody,
+	.table thead,
+	.table tr {
+		display: block; }
+
+	.table th {
+		display: none;
+		font-size: 9px; }
+
+	.table td {
+		display: block;
+		width: auto !important; }
+
+	.table td.mobile-mini {
+		display: inline-block;
+		margin-right: -4px;
+		vertical-align: top !important;
+		width: 20% !important;	}
+
+	.table td.mobile-mini:before {
+		padding-bottom: 3px; }
+
+	.table td:before {
+		content: attr(data-title);
+		display: block;
+		font-size: 9px;
+		padding-bottom: 9px;
+		text-transform: uppercase; }
+
+	.table img {
+		display: block;
+		width: 100%;
+		height: auto;
+		max-width: 400px;
+		margin: 0 auto; }
+
+	.table .total {
+		font-size: 15px;
+		margin-top: 10px;
+		display: block; }
+
+	.table a.remove {
+		font-size: 12px;
+		height: 28px;
+		line-height: 1;
+		margin-top: 2px;
+		padding: 6px 3px;
+		width: 28px; }
+
+	.table dl {
+		padding-bottom: 23px; }
+
+	.table dl dt,
+	.table dl dd {
+		float: left;
+		margin-bottom: -1px;
+		text-align: right;
+		width: 48%;	}
+
+	.table dl dd {
+		text-align: left; }
+
+	.table .mobile-margin {
+		padding-bottom: 38px; }
+
+
+
+	/*
+	==========================================
+	==========================================
+	xxxx. Order Summary in Cart (Small Devices)
+	==========================================
+	==========================================
+	*/
+
+	.total-block {
+		font-size: 9px;
+		padding: 0 25px;	}
+
+	.total-block .title {
+		font-size: 15px;
+		letter-spacing: 1px;
+		margin-bottom: 15px;}
+
+	.total-block .cost {
+		font-size: 21px;
+		letter-spacing: 1px;
+		margin-bottom: 18px;	}
+
+	.total-block label {
+		letter-spacing: 0;
+		margin-bottom: 3px; }
+
+	.total-block .btn-label {
+		font-size: 15px;
+		letter-spacing: 1px;
+		margin-bottom: 5px;	}
+
+	.total-block .form-group {
+		margin-bottom: 14px; }
+
+	.total-block .sub-total {
+		padding-bottom: 8px; }
+
+	.total-block .sub-total .title {
+		font-size: 9px;
+		letter-spacing: 0;
+		margin-bottom: 4px;	}
+
+	.total-block .btn {
+		font-size: 11px;
+		display: block;
+		letter-spacing: 4px;
+		max-width: 400px;
+		padding: 12px 15px 11px !important;
+		width: 100%;	}
+
+
+	/*
+	==========================================
+	==========================================
+	xxxx. Form (Small Devices)
+	==========================================
+	==========================================
+	*/
+
+	textarea.form-control {
+		height: 100px; }
+
+
+	.mce_inline_error + .mce_inline_error {
+		bottom: 0;
+		left: 50%;
+		position: absolute;
+		max-width: 400px;
+		transform: translateX(-50%);
+		-webkit-transform: translateX(-50%);
+		-ms-transform: translateX(-50%);
+	}
+
+	/*
+	==========================================
+	==========================================
+	xxxx. My Account (Small Devices)
+	==========================================
+	==========================================
+	*/
+
+	#customer_orders,
+	#customer_sidebar {
+		float: none !important;
+		padding: 0 0 20px !important;
+		max-width: 400px;
+		margin: 0 auto;
+		text-align: center  !important;
+		width: auto !important; }
+
+	/*
+	==========================================
+	==========================================
+	xxxx. NavBar (Small Devices)
+	==========================================
+	==========================================
+	*/
+  	.navbar-default .navbar-collapse,
+    .navbar-default .navbar-form {
+      height: auto !important;
+      padding-bottom: 99999px;
+      margin: 0 0 -99999px !important;}
+
+}
+
+/* 
+Small devices (smart phones, browser window is smaller than 480px) 
+*/
+@media (max-width: $small) {
+
+	.carousel-inner img,
+	.cycle-gallery img {
+		height: 187px !important;
+		left: 50%;
+		max-width: none !important;
+		position: relative;
+		top: 50%;
+		width: auto !important;
+		-webkit-transform: translateX(-50%);
+		-ms-transform: translateX(-50%);
+		transform: translateX(-50%); }
+
+	.product-form .slideshow {
+		margin: 0 -5px; }
+
+	.table td.mobile-mini {
+		display: inline-block;
+		margin-right: -4px;
+		vertical-align: top !important;
+		width: 33.33% !important;}
+}

@@ -1,0 +1,11 @@
+{% if settings.homepage != blank %}
+  <div class="pagecontent">
+    <h2>{{ pages[settings.homepage].title }}</h2>
+     {{ pages[settings.homepage].content }}
+  </div>
+{% else %}
+  {% include 'home_slider' %}
+  {% include 'home_category' %}
+  {% include 'new_style' %}
+  {% include 'this_that' %}
+{% endif %}

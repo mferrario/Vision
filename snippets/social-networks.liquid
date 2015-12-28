@@ -1,0 +1,15 @@
+{% if settings.show_social_on_footer %}
+  {% if settings.twitter_link != blank or settings.facebook_link != blank or settings.youtube_link != blank or settings.vimeo_link != blank or settings.atom_link != blank or settings.instagram_link != blank or settings.pinterest_link != blank or settings.tumblr_link != blank or settings.google_link != blank %}
+    <ul class="list-inline social-networks">
+      {% if settings.facebook_link != blank %}<li><a target="_blank" href="{{ settings.facebook_link }}" title="{{ 'layout.footer.social' | t: shop: shop.name, social_media: 'Facebook' }}" class="icon-social facebook"><i class="iconalt-facebook"></i></a></li>{% endif %}
+      {% if settings.twitter_link != blank %}<li><a target="_blank" href="{{ settings.twitter_link }}" title="{{ 'layout.footer.social' | t: shop: shop.name, social_media: 'Twitter' }}" class="icon-social twitter"><i class="iconalt-twitter"></i></a></li>{% endif %}
+      {% if settings.google_link != blank %}<li><a target="_blank" href="{{ settings.google_link }}" title="{{ 'layout.footer.social' | t: shop: shop.name, social_media: 'Google+' }}" class="icon-social google">Google+</a></li>{% endif %}
+      {% if settings.youtube_link != blank %}<li><a target="_blank" href="{{ settings.youtube_link }}" title="{{ 'layout.footer.social' | t: shop: shop.name, social_media: 'Youtube' }}" class="icon-social youtube">YouTube</a></li>{% endif %}
+      {% if settings.vimeo_link != blank %}<li><a target="_blank" href="{{ settings.vimeo_link }}" title="{{ 'layout.footer.social' | t: shop: shop.name, social_media: 'Vimeo' }}" class="icon-social vimeo">Vimeo</a></li>{% endif %}
+      {% if settings.instagram_link != blank %}<li><a target="_blank" href="{{ settings.instagram_link }}" title="{{ 'layout.footer.social' | t: shop: shop.name, social_media: 'Instagram' }}" class="icon-social instagram"><i class="iconalt-instagram"></i></a></li>{% endif %}
+      {% if settings.pinterest_link != blank %}<li><a target="_blank" href="{{ settings.pinterest_link }}" title="{{ 'layout.footer.social' | t: shop: shop.name, social_media: 'Pinterest' }}" class="icon-social pinterest"><i class="iconalt-pinterest-p"></i></a></li>{% endif %}
+      {% if settings.tumblr_link != blank %}<li><a target="_blank" href="{{ settings.tumblr_link }}" title="{{ 'layout.footer.social' | t: shop: shop.name, social_media: 'Tumblr' }}" class="icon-social tumblr">Tumblr</a></li>{% endif %}
+      {% if settings.atom_link != blank %}<li><a target="_blank" href="{{ settings.atom_link }}" title="{{ 'layout.footer.news' | t: shop: shop.name }}" class="icon-social atom">Blog feed</a></li>{% endif %}
+    </ul>
+  {% endif %}
+{% endif %}
